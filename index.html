@@ -1686,6 +1686,63 @@
       color: #94a3b8;
     }
 
+    .company-footer-link {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .company-footer-link:hover {
+      color: var(--gold-light);
+      text-decoration: underline;
+    }
+
+    .company-footer-link strong {
+      color: #ffffff;
+      transition: color 0.2s ease;
+    }
+
+    .company-footer-link:hover strong {
+      color: var(--gold-light);
+    }
+
+    .btn-company-visit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 20px;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1.5px solid rgba(245, 158, 11, 0.5);
+      color: var(--gold-light);
+      border-radius: var(--radius-full);
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      white-space: nowrap;
+    }
+
+    .btn-company-visit:hover {
+      background: var(--gold-gradient);
+      color: #0a1c32;
+      border-color: transparent;
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .btn-company-visit svg {
+      transition: transform 0.2s ease;
+    }
+
+    .btn-company-visit:hover svg {
+      transform: translateX(2px) translateY(-2px);
+    }
+
     /* ==========================================================================
        MOBILE STICKY ACTION BAR
        ========================================================================== */
@@ -2906,14 +2963,28 @@
 
       </div>
 
-      <!-- Footer Bottom Copyright -->
+      <!-- Footer Bottom Copyright & Visit Company Button -->
       <div class="footer-bottom">
-        <p class="footer-bottom-copy">
-          © 2026 SaiyedWebCoders. All Rights Reserved.
-        </p>
-        <p style="font-size: 0.82rem; color: #64748b;">
-          Professional Fabric Vulcanizing & Garment Repairing
-        </p>
+        <div class="footer-bottom-info">
+          <p class="footer-bottom-copy">
+            <a href="https://saiyedwebcoders.netlify.app/" target="_blank" rel="noopener noreferrer" class="company-footer-link" title="Visit SaiyedWebCoders Official Website">
+              © 2026 <strong>SaiyedWebCoders</strong>. All Rights Reserved. ↗
+            </a>
+          </p>
+          <p style="font-size: 0.82rem; color: #64748b; margin-top: 4px;">
+            Professional Fabric Vulcanizing & Garment Repairing
+          </p>
+        </div>
+
+        <div class="footer-bottom-actions">
+          <a href="https://saiyedwebcoders.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn-company-visit" title="Visit SaiyedWebCoders Website">
+            <span>Visit Our Company</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </footer>
