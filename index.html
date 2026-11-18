@@ -517,6 +517,26 @@
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
+      display: inline;
+    }
+
+    .typewriter-cursor {
+      display: inline-block;
+      width: 3.5px;
+      height: 0.88em;
+      vertical-align: -0.06em;
+      background: var(--gold-primary);
+      margin-left: 3px;
+      margin-right: 3px;
+      border-radius: 2px;
+      animation: blinkCursor 0.75s ease-in-out infinite;
+      box-shadow: 0 0 10px rgba(245, 158, 11, 0.75);
+    }
+
+    @keyframes blinkCursor {
+      0%, 45% { opacity: 1; }
+      50%, 95% { opacity: 0; }
+      100% { opacity: 1; }
     }
 
     .hero-gujarati-highlight {
@@ -2064,8 +2084,8 @@
             <span class="hero-pill-text gujarati">રોયલ સ્ટોર્સ • વલ્કેનાઈઝિંગ સર્વિસ</span>
           </div>
 
-          <h1 class="hero-title">
-            Clothing Repair & <span class="highlight">Fabric Vulcanizing</span> Services
+          <h1 class="hero-title" aria-label="Clothing Repair &amp; Fabric Vulcanizing Services">
+            Clothing Repair &amp; <span class="highlight" id="typewriterWord">Fabric Vulcanizing</span><span class="typewriter-cursor" aria-hidden="true"></span> Services
           </h1>
 
           <div class="hero-gujarati-highlight">
@@ -3023,6 +3043,58 @@
        - Card Quick Selection Helper
        ======================================================================== -->
   <script>
+    // ------------------------------------------------------------------------
+    // 0. Hero Live Typewriter Effect (Infinite Loop with Live Cursor)
+    // ------------------------------------------------------------------------
+    (function initHeroTypewriter() {
+      const typewriterEl = document.getElementById('typewriterWord');
+      if (!typewriterEl) return;
+
+      const services = [
+        "Fabric Vulcanizing",
+        "Jeans & Pants",
+        "Shirts & Tops",
+        "Jackets & Blazers",
+        "Travel Bags",
+        "Denim Vulcanizing"
+      ];
+
+      let serviceIndex = 0;
+      let charIndex = services[0].length;
+      let isDeleting = true;
+      const typeSpeed = 85;
+      const deleteSpeed = 45;
+      const holdDelay = 2200;
+      const nextWordDelay = 450;
+
+      function tick() {
+        const currentService = services[serviceIndex];
+
+        if (isDeleting) {
+          charIndex--;
+          typewriterEl.textContent = currentService.substring(0, charIndex);
+        } else {
+          charIndex++;
+          typewriterEl.textContent = currentService.substring(0, charIndex);
+        }
+
+        let currentDelay = isDeleting ? deleteSpeed : typeSpeed;
+
+        if (!isDeleting && charIndex === currentService.length) {
+          isDeleting = true;
+          currentDelay = holdDelay;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          serviceIndex = (serviceIndex + 1) % services.length;
+          currentDelay = nextWordDelay;
+        }
+
+        setTimeout(tick, currentDelay);
+      }
+
+      setTimeout(tick, holdDelay);
+    })();
+
     // ------------------------------------------------------------------------
     // 1. Mobile Menu Functionality
     // ------------------------------------------------------------------------
