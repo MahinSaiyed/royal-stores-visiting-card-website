@@ -2162,6 +2162,142 @@
 
 
   <!-- ========================================================================
+       WHATSAPP PICKUP ENQUIRY FORM SECTION (CORE FEATURE)
+       ======================================================================== -->
+  <section class="form-section" id="booking-form">
+    <div class="container">
+      <div class="form-card-wrapper">
+        <div class="enquiry-card">
+          
+          <div class="form-header">
+            <div class="section-tag">
+              <span>ONLINE BOOKING</span>
+            </div>
+            <h2 class="form-title">
+              Book Your Pickup – Royal Stores
+            </h2>
+            <p class="form-subtitle">
+              Fill in your details below and send your pickup enquiry directly to Royal Stores on WhatsApp.
+            </p>
+          </div>
+
+          <!-- Pickup Reminder Box -->
+          <div class="form-rules-reminder">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <div>
+              <strong>મહત્વપૂર્ણ નોંધ:</strong> ઓછામાં ઓછા 3 થી 4 કપડાં હોવા જરૂરી છે અને મિનિમમ ઓર્ડર ₹300/- હોવો જરૂરી છે.
+            </div>
+          </div>
+
+          <!-- The Form -->
+          <form id="pickupForm" novalidate onsubmit="handlePickupFormSubmit(event)">
+            
+            <!-- Field 1: Customer Name -->
+            <div class="form-group">
+              <label for="customerName" class="form-label">
+                Customer Name <span class="req">*</span>
+                <span class="sub-label gujarati">(તમારું પૂરું નામ)</span>
+              </label>
+              <input 
+                type="text" 
+                id="customerName" 
+                name="customerName" 
+                class="form-control" 
+                placeholder="Enter your full name" 
+                required
+                aria-required="true"
+                aria-describedby="nameError"
+                autocomplete="name"
+              >
+              <div class="form-error-msg" id="nameError" role="alert">Please enter your full name.</div>
+            </div>
+
+            <!-- Field 2: Customer Mobile Number -->
+            <div class="form-group">
+              <label for="customerMobile" class="form-label">
+                Customer Mobile Number <span class="req">*</span>
+                <span class="sub-label gujarati">(મોબાઇલ નંબર)</span>
+              </label>
+              <input 
+                type="tel" 
+                id="customerMobile" 
+                name="customerMobile" 
+                class="form-control" 
+                placeholder="Enter your mobile number" 
+                required
+                aria-required="true"
+                aria-describedby="phoneError"
+                inputmode="tel"
+                maxlength="20"
+                autocomplete="tel"
+              >
+              <div class="form-error-msg" id="phoneError" role="alert">Please enter a valid 10-digit mobile number.</div>
+            </div>
+
+            <!-- Field 3: Pickup Address -->
+            <div class="form-group">
+              <label for="pickupAddress" class="form-label">
+                Pickup Address <span class="req">*</span>
+                <span class="sub-label gujarati">(ઘરનું પૂરું સરનામું અને એરિયા)</span>
+              </label>
+              <textarea 
+                id="pickupAddress" 
+                name="pickupAddress" 
+                class="form-control" 
+                placeholder="Enter your complete pickup address, area and landmark." 
+                rows="3" 
+                required
+                aria-required="true"
+                aria-describedby="addressError"
+                autocomplete="street-address"
+              ></textarea>
+              <div class="form-error-msg" id="addressError" role="alert">Please enter your complete pickup address.</div>
+            </div>
+
+            <!-- Field 4: Clothes / Items for Repair -->
+            <div class="form-group">
+              <label for="repairItems" class="form-label">
+                Clothes / Items for Repair <span class="req">*</span>
+                <span class="sub-label gujarati">(કપડાં અથવા સામાનની વિગત - ઓછામાં ઓછા 3-4 કપડાં)</span>
+              </label>
+              <textarea 
+                id="repairItems" 
+                name="repairItems" 
+                class="form-control" 
+                placeholder="Example: 2 Jeans, 1 Shirt, 1 Jacket, 1 Travel Bag. Please describe the repair needed." 
+                rows="3" 
+                required
+                aria-required="true"
+                aria-describedby="itemsError"
+              ></textarea>
+              <div class="form-error-msg" id="itemsError" role="alert">Please specify the items and repairs needed (minimum 3-4 clothes).</div>
+            </div>
+
+            <!-- Submit Button (WhatsApp Golden CTA) -->
+            <button type="submit" class="form-btn-submit">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zM12.05 20.21c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.264 8.264 0 0 1-1.26-4.44c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.29-8.43 8.29zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.84-.86 2.06 0 1.21.89 2.39 1.01 2.55.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29z"/>
+              </svg>
+              <span>Send Enquiry on WhatsApp ↗</span>
+            </button>
+
+            <p class="form-note">
+              Destination WhatsApp: <strong>+91 97231 14370</strong>. Clicking this button validates your details and opens your WhatsApp app with the message pre-filled. You will press 'Send' manually.
+            </p>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
        ABOUT ROYAL STORES SECTION
        ======================================================================== -->
   <section class="about-section" id="about">
@@ -2559,142 +2695,6 @@
         </div>
       </div>
 
-    </div>
-  </section>
-
-
-  <!-- ========================================================================
-       WHATSAPP PICKUP ENQUIRY FORM SECTION (CORE FEATURE)
-       ======================================================================== -->
-  <section class="form-section" id="booking-form">
-    <div class="container">
-      <div class="form-card-wrapper">
-        <div class="enquiry-card">
-          
-          <div class="form-header">
-            <div class="section-tag">
-              <span>ONLINE BOOKING</span>
-            </div>
-            <h2 class="form-title">
-              Book Your Pickup – Royal Stores
-            </h2>
-            <p class="form-subtitle">
-              Fill in your details below and send your pickup enquiry directly to Royal Stores on WhatsApp.
-            </p>
-          </div>
-
-          <!-- Pickup Reminder Box -->
-          <div class="form-rules-reminder">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="12" y1="8" x2="12" y2="12"></line>
-              <line x1="12" y1="16" x2="12.01" y2="16"></line>
-            </svg>
-            <div>
-              <strong>મહત્વપૂર્ણ નોંધ:</strong> ઓછામાં ઓછા 3 થી 4 કપડાં હોવા જરૂરી છે અને મિનિમમ ઓર્ડર ₹300/- હોવો જરૂરી છે.
-            </div>
-          </div>
-
-          <!-- The Form -->
-          <form id="pickupForm" novalidate onsubmit="handlePickupFormSubmit(event)">
-            
-            <!-- Field 1: Customer Name -->
-            <div class="form-group">
-              <label for="customerName" class="form-label">
-                Customer Name <span class="req">*</span>
-                <span class="sub-label gujarati">(તમારું પૂરું નામ)</span>
-              </label>
-              <input 
-                type="text" 
-                id="customerName" 
-                name="customerName" 
-                class="form-control" 
-                placeholder="Enter your full name" 
-                required
-                aria-required="true"
-                aria-describedby="nameError"
-                autocomplete="name"
-              >
-              <div class="form-error-msg" id="nameError" role="alert">Please enter your full name.</div>
-            </div>
-
-            <!-- Field 2: Customer Mobile Number -->
-            <div class="form-group">
-              <label for="customerMobile" class="form-label">
-                Customer Mobile Number <span class="req">*</span>
-                <span class="sub-label gujarati">(મોબાઇલ નંબર)</span>
-              </label>
-              <input 
-                type="tel" 
-                id="customerMobile" 
-                name="customerMobile" 
-                class="form-control" 
-                placeholder="Enter your mobile number" 
-                required
-                aria-required="true"
-                aria-describedby="phoneError"
-                inputmode="tel"
-                maxlength="20"
-                autocomplete="tel"
-              >
-              <div class="form-error-msg" id="phoneError" role="alert">Please enter a valid 10-digit mobile number.</div>
-            </div>
-
-            <!-- Field 3: Pickup Address -->
-            <div class="form-group">
-              <label for="pickupAddress" class="form-label">
-                Pickup Address <span class="req">*</span>
-                <span class="sub-label gujarati">(ઘરનું પૂરું સરનામું અને એરિયા)</span>
-              </label>
-              <textarea 
-                id="pickupAddress" 
-                name="pickupAddress" 
-                class="form-control" 
-                placeholder="Enter your complete pickup address, area and landmark." 
-                rows="3" 
-                required
-                aria-required="true"
-                aria-describedby="addressError"
-                autocomplete="street-address"
-              ></textarea>
-              <div class="form-error-msg" id="addressError" role="alert">Please enter your complete pickup address.</div>
-            </div>
-
-            <!-- Field 4: Clothes / Items for Repair -->
-            <div class="form-group">
-              <label for="repairItems" class="form-label">
-                Clothes / Items for Repair <span class="req">*</span>
-                <span class="sub-label gujarati">(કપડાં અથવા સામાનની વિગત - ઓછામાં ઓછા 3-4 કપડાં)</span>
-              </label>
-              <textarea 
-                id="repairItems" 
-                name="repairItems" 
-                class="form-control" 
-                placeholder="Example: 2 Jeans, 1 Shirt, 1 Jacket, 1 Travel Bag. Please describe the repair needed." 
-                rows="3" 
-                required
-                aria-required="true"
-                aria-describedby="itemsError"
-              ></textarea>
-              <div class="form-error-msg" id="itemsError" role="alert">Please specify the items and repairs needed (minimum 3-4 clothes).</div>
-            </div>
-
-            <!-- Submit Button (WhatsApp Golden CTA) -->
-            <button type="submit" class="form-btn-submit">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zM12.05 20.21c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.264 8.264 0 0 1-1.26-4.44c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.29-8.43 8.29zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.84-.86 2.06 0 1.21.89 2.39 1.01 2.55.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29z"/>
-              </svg>
-              <span>Send Enquiry on WhatsApp ↗</span>
-            </button>
-
-            <p class="form-note">
-              Destination WhatsApp: <strong>+91 97231 14370</strong>. Clicking this button validates your details and opens your WhatsApp app with the message pre-filled. You will press 'Send' manually.
-            </p>
-
-          </form>
-
-        </div>
-      </div>
     </div>
   </section>
 
