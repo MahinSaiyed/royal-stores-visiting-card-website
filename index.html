@@ -1798,11 +1798,189 @@
     }
 
     /* ==========================================================================
+       PRODUCTS & ACCESSORIES CATALOG SECTION
+       ========================================================================== */
+    .products-section {
+      padding: clamp(60px, 8vw, 90px) 0;
+      background: linear-gradient(180deg, #f8fafc 0%, #eef5fc 50%, #f8fafc 100%);
+      border-top: 1px solid rgba(15, 43, 72, 0.08);
+      border-bottom: 1px solid rgba(15, 43, 72, 0.08);
+      position: relative;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 36px;
+    }
+
+    .catalog-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .catalog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+      border-color: rgba(245, 158, 11, 0.5);
+    }
+
+    .catalog-img-wrap {
+      position: relative;
+      background: #f1f5f9;
+      height: 250px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .catalog-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .catalog-card:hover .catalog-img-wrap img {
+      transform: scale(1.04);
+    }
+
+    .catalog-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      z-index: 2;
+    }
+
+    .catalog-body {
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .catalog-brand {
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      letter-spacing: 1px;
+    }
+
+    .catalog-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      line-height: 1.35;
+    }
+
+    .catalog-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .catalog-meta-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .catalog-price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .catalog-price {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: var(--primary-navy);
+      font-family: var(--font-display);
+    }
+
+    .catalog-delivery-tag {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #b45309;
+      background: rgba(245, 158, 11, 0.15);
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px dashed rgba(245, 158, 11, 0.5);
+    }
+
+    .catalog-wholesale-tag {
+      font-size: 0.76rem;
+      color: #1e40af;
+      background: #eff6ff;
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+    }
+
+    .btn-view-pdp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--primary-navy);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 12px 18px;
+      border-radius: var(--radius-full);
+      transition: all 0.25s ease;
+      width: 100%;
+      text-align: center;
+      border: 1.5px solid transparent;
+      box-shadow: 0 4px 12px rgba(10, 28, 50, 0.15);
+    }
+
+    .btn-view-pdp:hover {
+      background: var(--gold-primary);
+      color: var(--primary-navy);
+      border-color: var(--gold-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(245, 158, 11, 0.35);
+    }
+
+    /* ==========================================================================
        RESPONSIVE BREAKPOINTS (Mobile First & 320px to Desktop)
        ========================================================================== */
     @media (max-width: 1024px) {
       .nav-menu {
         gap: 14px;
+      }
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
       }
       .nav-link {
         font-size: 0.88rem;
@@ -1881,6 +2059,9 @@
         grid-template-columns: 1fr;
       }
       .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .products-grid {
         grid-template-columns: 1fr;
       }
       .workflow-grid {
@@ -2025,6 +2206,7 @@
           <li><a href="#services" class="nav-link">Services</a></li>
           <li><a href="#what-we-repair" class="nav-link">What We Repair</a></li>
           <li><a href="#pickup-delivery" class="nav-link">Pickup & Delivery</a></li>
+          <li><a href="#products" class="nav-link" style="color: var(--gold-dark); font-weight: 800;">Accessories 🛍️</a></li>
           <li><a href="#booking-form" class="nav-link">Book Pickup</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
@@ -2033,9 +2215,9 @@
       <!-- Header Actions -->
       <div class="header-actions">
         <!-- Prominent Buy Product Button -->
-        <a href="https://fabribond.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn-buy-product" title="Discover FabriBond Plus Products">
+        <a href="#products" class="btn-buy-product" title="Shop Tailoring & Repair Accessories">
           <span class="gold-dot"></span>
-          <span>My Product – Buy Now ↗</span>
+          <span>Accessories / Products ↗</span>
         </a>
 
         <!-- Mobile Hamburger Button -->
@@ -2055,12 +2237,13 @@
       <a href="#services" class="mobile-nav-link">Services <span>→</span></a>
       <a href="#what-we-repair" class="mobile-nav-link">What We Repair <span>→</span></a>
       <a href="#pickup-delivery" class="mobile-nav-link">Pickup & Delivery <span>→</span></a>
+      <a href="#products" class="mobile-nav-link" style="color: var(--gold-dark); font-weight: 800;">Accessories & Products 🛍️ <span>→</span></a>
       <a href="#booking-form" class="mobile-nav-link">Book a Pickup <span>→</span></a>
       <a href="#contact" class="mobile-nav-link">Contact & QR <span>→</span></a>
       
       <div class="mobile-nav-actions">
-        <a href="https://fabribond.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="width: 100%;">
-          ⭐ My Product – Buy Now ↗
+        <a href="#products" class="btn btn-gold" style="width: 100%;">
+          🛍️ Accessories / Products ↗
         </a>
         <a href="tel:+919723114370" class="btn btn-navy" style="width: 100%;">
           📞 Call: +91 97231 14370
@@ -2740,6 +2923,211 @@
       </button>
     </div>
   </div>
+
+
+  <!-- ========================================================================
+       PRODUCTS & ACCESSORIES CATALOG SECTION
+       ======================================================================== -->
+  <section class="products-section" id="products">
+    <div class="container">
+
+      <div class="text-center">
+        <div class="section-tag">
+          <span>WHOLESALE ACCESSORIES & DIY PRODUCTS</span>
+        </div>
+        <h2 class="section-title">
+          Tailoring Materials & Repair Products
+        </h2>
+        <p class="section-subtitle gujarati">
+          અમારી પ્રોડક્ટ્સ અને હોલસેલ એક્સેસરીઝ — સીધા WhatsApp પર ઓર્ડર કરો:
+        </p>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- Product 1: SUN Brand Wire Runners -->
+        <div class="catalog-card">
+          <div class="catalog-img-wrap">
+            <span class="catalog-badge">1,000 Pcs Bulk Pack</span>
+            <img src="images/product-sun-runners.jpg" alt="SUN Brand Wire Zipper Runners for Trolley Bags & Ladies Bags" loading="lazy">
+          </div>
+          <div class="catalog-body">
+            <div>
+              <span class="catalog-brand">SUN Original</span>
+              <h3 class="catalog-title">SUN Brand Wire Runners for Trolley Bags & Ladies Bags</h3>
+              <p class="catalog-desc">
+                Heavy-duty wire puller runners in sizes No. 5, 7, 8 & 10 for trolley luggage, duffle bags and ladies handbags.
+              </p>
+            </div>
+            <div class="catalog-meta-box">
+              <div class="catalog-price-row">
+                <span class="catalog-price">₹3,200</span>
+                <span class="catalog-delivery-tag">+ Delivery Charges</span>
+              </div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">
+                Sizes: No. 5, No. 7, No. 8, No. 10
+              </div>
+            </div>
+            <a href="product.html?id=sun-runners" target="_blank" rel="noopener noreferrer" class="btn-view-pdp" title="View details and order SUN runners in new tab">
+              <span>View Details & Buy ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 2: Jeans Two-Part Metal Buttons -->
+        <div class="catalog-card">
+          <div class="catalog-img-wrap">
+            <span class="catalog-badge">100 Pcs Complete Set</span>
+            <img src="images/product-jeans-buttons.jpg" alt="Jeans Two-Part Metal Buttons" loading="lazy">
+          </div>
+          <div class="catalog-body">
+            <div>
+              <span class="catalog-brand">Royal Accessories</span>
+              <h3 class="catalog-title">Jeans Two-Part Metal Buttons (100 Pcs Pack)</h3>
+              <p class="catalog-desc">
+                High-strength embossed metal buttons with ribbed tack studs for jeans pants, jackets, dungarees, and workwear.
+              </p>
+            </div>
+            <div class="catalog-meta-box">
+              <div class="catalog-price-row">
+                <span class="catalog-price">₹599</span>
+                <span class="catalog-delivery-tag">+ Delivery Charges</span>
+              </div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">
+                Contents: 100 Caps + 100 Tack Nails
+              </div>
+            </div>
+            <a href="product.html?id=jeans-buttons" target="_blank" rel="noopener noreferrer" class="btn-view-pdp" title="View details and order jeans buttons in new tab">
+              <span>View Details & Buy ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 3: Premium Brass Jeans Zippers -->
+        <div class="catalog-card">
+          <div class="catalog-img-wrap">
+            <span class="catalog-badge">50 Pcs Pouch Pack</span>
+            <img src="images/product-brass-zippers.jpg" alt="Premium Brass Metal Jeans Zippers" loading="lazy">
+          </div>
+          <div class="catalog-body">
+            <div>
+              <span class="catalog-brand">Royal Denim Accessories</span>
+              <h3 class="catalog-title">Premium Brass Metal Jeans Zippers (50 Pcs)</h3>
+              <p class="catalog-desc">
+                Original top quality smooth running chain with brass/copper teeth and auto-lock puller sliders on dark navy tape.
+              </p>
+            </div>
+            <div class="catalog-meta-box">
+              <div class="catalog-price-row">
+                <span class="catalog-price">₹1,499</span>
+                <span class="catalog-delivery-tag">+ Delivery Charges</span>
+              </div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">
+                Available Lengths: 5, 6, 7 Inch
+              </div>
+            </div>
+            <a href="product.html?id=brass-zippers" target="_blank" rel="noopener noreferrer" class="btn-view-pdp" title="View details and order brass zippers in new tab">
+              <span>View Details & Buy ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 4: Heavy-Duty Jacket Zippers -->
+        <div class="catalog-card">
+          <div class="catalog-img-wrap">
+            <span class="catalog-badge">26" & 28" Lengths</span>
+            <img src="images/product-jacket-zippers.jpg" alt="Heavy-Duty Jacket & Outerwear Zippers" loading="lazy">
+          </div>
+          <div class="catalog-body">
+            <div>
+              <span class="catalog-brand">Heavy-Duty Outerwear</span>
+              <h3 class="catalog-title">Heavy-Duty Jacket & Outerwear Zippers</h3>
+              <p class="catalog-desc">
+                Separating open-end zippers for jackets. Available in molded Fiber Chain & Golden Brass Metal Chain.
+              </p>
+            </div>
+            <div class="catalog-meta-box">
+              <div class="catalog-price-row">
+                <span class="catalog-price">₹299 – ₹2,999</span>
+                <span class="catalog-delivery-tag">+ Delivery Charges</span>
+              </div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">
+                Single Piece & 50 Pcs Wholesale Pouch
+              </div>
+            </div>
+            <a href="product.html?id=jacket-zippers" target="_blank" rel="noopener noreferrer" class="btn-view-pdp" title="View details and order jacket zippers in new tab">
+              <span>View Details & Buy ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 5: FabriBond Plus + Velcro -->
+        <div class="catalog-card">
+          <div class="catalog-img-wrap">
+            <span class="catalog-badge" style="background: #b45309;">Authentic DIY Kit</span>
+            <img src="images/product-fabribond.jpg" alt="FabriBond Plus Vulcanized Repair Sheet and Velcro" loading="lazy">
+          </div>
+          <div class="catalog-body">
+            <div>
+              <span class="catalog-brand">FabriBond Plus</span>
+              <h3 class="catalog-title">FabriBond Plus + Velcro Fastener Pack</h3>
+              <p class="catalog-desc">
+                5" × 20" vulcanized adhesive repair sheet + Hook & Loop Velcro fastener tape. Permanent bond with domestic iron without stitching.
+              </p>
+            </div>
+            <div class="catalog-meta-box">
+              <div class="catalog-price-row">
+                <div>
+                  <span style="font-size: 0.95rem; color: #94a3b8; text-decoration: line-through; margin-right: 6px;">₹130</span>
+                  <span class="catalog-price">₹99</span>
+                </div>
+                <span class="catalog-delivery-tag" style="background: rgba(239, 68, 68, 0.1); color: #dc2626; border-color: rgba(239,68,68,0.4);">
+                  + ₹50 Delivery
+                </span>
+              </div>
+              <div class="catalog-wholesale-tag">
+                📦 Wholesale Available (Higher Qty = Lower Price)
+              </div>
+            </div>
+            <a href="product.html?id=fabribond-velcro" target="_blank" rel="noopener noreferrer" class="btn-view-pdp" title="View details and order FabriBond in new tab">
+              <span>View Details & Buy ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 6: Megibha Elastic Rolls -->
+        <div class="catalog-card">
+          <div class="catalog-img-wrap">
+            <span class="catalog-badge">90 Foot Roll (~27.4m)</span>
+            <img src="images/product-elastic-rolls.jpg" alt="Megibha Heavy-Duty Tailoring Elastic Roll" loading="lazy">
+          </div>
+          <div class="catalog-body">
+            <div>
+              <span class="catalog-brand">Megibha Original</span>
+              <h3 class="catalog-title">Megibha Heavy-Duty Tailoring Elastic Roll</h3>
+              <p class="catalog-desc">
+                Premium woven stretch elastic rolls in Optic White & Deep Black. Widths: 1", 1.5", 2" & 2.5". Durable elastic memory.
+              </p>
+            </div>
+            <div class="catalog-meta-box">
+              <div class="catalog-price-row">
+                <span class="catalog-price">₹999</span>
+                <span class="catalog-delivery-tag">+ Delivery Charges</span>
+              </div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">
+                Length: 90 Feet • White & Black
+              </div>
+            </div>
+            <a href="product.html?id=megibha-elastic" target="_blank" rel="noopener noreferrer" class="btn-view-pdp" title="View details and order Megibha elastic in new tab">
+              <span>View Details & Buy ↗</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
 
 
   <!-- ========================================================================

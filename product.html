@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Product Details & Order | Royal Stores Accessories</title>
+  <meta name="description" content="Order tailoring materials, zipper runners, jeans buttons, brass & jacket zippers, FabriBond Plus and Megibha elastic rolls directly via WhatsApp from Royal Stores.">
+  <meta name="theme-color" content="#0a1c32">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-navy: #0a1c32;
+      --secondary-navy: #0f2b48;
+      --accent-navy: #193a61;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --text-light: #64748b;
+
+      --gold-primary: #f59e0b;
+      --gold-light: #fbbf24;
+      --gold-dark: #d97706;
+      --gold-gradient: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #d97706 100%);
+
+      --whatsapp-green: #25d366;
+      --whatsapp-dark: #128c7e;
+      --whatsapp-gradient: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+
+      --bg-body: #f4f7fa;
+      --bg-card: #ffffff;
+      --border-light: #e2e8f0;
+
+      --shadow-sm: 0 2px 8px rgba(10, 28, 50, 0.05);
+      --shadow-md: 0 8px 24px -4px rgba(10, 28, 50, 0.08);
+      --shadow-lg: 0 16px 36px -6px rgba(10, 28, 50, 0.12);
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-guj: 'Noto Sans Gujarati', 'Plus Jakarta Sans', sans-serif;
+      --font-display: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      color: var(--text-dark);
+      background: var(--bg-body);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    /* Top Navigation Header */
+    .pdp-header {
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 16px 0;
+      border-bottom: 2px solid var(--gold-primary);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .back-home-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      padding: 7px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .back-home-link:hover {
+      background: var(--gold-primary);
+      color: var(--primary-navy);
+      border-color: var(--gold-light);
+    }
+
+    .brand-title-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title-guj {
+      font-family: var(--font-guj);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--gold-light);
+      line-height: 1.1;
+    }
+
+    .brand-title-eng {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: #94a3b8;
+    }
+
+    .header-contact-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: var(--gold-light);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    /* Breadcrumbs */
+    .breadcrumb-bar {
+      padding: 16px 0;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .breadcrumb-bar a {
+      color: var(--secondary-navy);
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .breadcrumb-bar a:hover {
+      color: var(--gold-dark);
+      text-decoration: underline;
+    }
+
+    .breadcrumb-separator {
+      margin: 0 8px;
+      color: #94a3b8;
+    }
+
+    /* Main Amazon-Style Layout */
+    .pdp-main-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-md);
+      padding: clamp(20px, 3.5vw, 40px);
+      margin-bottom: 40px;
+    }
+
+    .pdp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: clamp(24px, 4vw, 50px);
+      align-items: start;
+    }
+
+    /* Left Column: Gallery */
+    .pdp-gallery {
+      position: sticky;
+      top: 90px;
+    }
+
+    .main-img-wrap {
+      background: #f8fafc;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 380px;
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.02);
+      position: relative;
+    }
+
+    .main-img-wrap img {
+      max-height: 440px;
+      width: auto;
+      object-fit: contain;
+      border-radius: var(--radius-sm);
+      transition: transform 0.3s ease;
+    }
+
+    .main-img-wrap:hover img {
+      transform: scale(1.03);
+    }
+
+    .badge-corner {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+    }
+
+    .gallery-trust-list {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      text-align: center;
+    }
+
+    .trust-pill {
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-sm);
+      padding: 10px 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .trust-pill svg {
+      color: var(--gold-dark);
+    }
+
+    /* Right Column: Details & Ordering */
+    .pdp-details {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .product-meta-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-pill {
+      background: rgba(10, 28, 50, 0.08);
+      color: var(--primary-navy);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+    }
+
+    .rating-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: #d97706;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .product-h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--primary-navy);
+      line-height: 1.25;
+    }
+
+    .product-desc-lead {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    /* Price Card Box */
+    .price-box {
+      background: linear-gradient(135deg, #f8fafc 0%, #edf4fd 100%);
+      border: 2px solid rgba(245, 158, 11, 0.35);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .price-top-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .price-current {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--primary-navy);
+    }
+
+    .price-original {
+      font-size: 1.2rem;
+      color: #94a3b8;
+      text-decoration: line-through;
+    }
+
+    .price-discount-tag {
+      background: #ef4444;
+      color: #ffffff;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .delivery-charge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #b45309;
+      background: rgba(245, 158, 11, 0.15);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      align-self: flex-start;
+      border: 1px dashed rgba(245, 158, 11, 0.6);
+    }
+
+    .wholesale-rule-banner {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      border-radius: 4px;
+      padding: 10px 14px;
+      font-size: 0.88rem;
+      color: #1e40af;
+      line-height: 1.5;
+    }
+
+    /* Option Selection Sections */
+    .option-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .option-label {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .option-selected-text {
+      color: var(--gold-dark);
+      font-weight: 800;
+    }
+
+    .pills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill-btn {
+      background: #ffffff;
+      border: 1.5px solid #cbd5e1;
+      padding: 9px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pill-btn:hover {
+      border-color: var(--primary-navy);
+      background: #f8fafc;
+    }
+
+    .pill-btn.active {
+      border-color: var(--primary-navy);
+      background: var(--primary-navy);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(10, 28, 50, 0.2);
+    }
+
+    /* Quantity Box */
+    .qty-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .qty-selector {
+      display: inline-flex;
+      align-items: center;
+      border: 1.5px solid #cbd5e1;
+      border-radius: var(--radius-full);
+      background: #ffffff;
+      overflow: hidden;
+    }
+
+    .qty-btn {
+      background: #f1f5f9;
+      border: none;
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .qty-btn:hover {
+      background: #e2e8f0;
+    }
+
+    .qty-input {
+      width: 50px;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 800;
+      border: none;
+      outline: none;
+      color: var(--primary-navy);
+    }
+
+    /* Buy Now on WhatsApp Button */
+    .btn-buy-whatsapp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: var(--whatsapp-gradient);
+      color: #ffffff;
+      font-size: 1.15rem;
+      font-weight: 800;
+      padding: 16px 28px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      border: none;
+      width: 100%;
+      text-align: center;
+    }
+
+    .btn-buy-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
+      filter: brightness(1.05);
+    }
+
+    .whatsapp-notice-sub {
+      font-size: 0.84rem;
+      color: var(--text-light);
+      text-align: center;
+    }
+
+    .whatsapp-notice-sub strong {
+      color: var(--secondary-navy);
+    }
+
+    /* Specs Table */
+    .specs-table-wrap {
+      border-top: 1px solid var(--border-light);
+      padding-top: 18px;
+    }
+
+    .specs-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 10px;
+    }
+
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    .specs-table tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    .specs-table td {
+      padding: 8px 12px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .specs-table td.spec-key {
+      font-weight: 700;
+      color: var(--text-muted);
+      width: 38%;
+    }
+
+    .specs-table td.spec-val {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    /* More Products Bar */
+    .other-products-section {
+      margin-top: 20px;
+      margin-bottom: 50px;
+    }
+
+    .other-header {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 16px;
+    }
+
+    .other-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 16px;
+    }
+
+    .mini-card {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      text-align: center;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .mini-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--gold-primary);
+    }
+
+    .mini-card img {
+      height: 120px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      margin-bottom: 8px;
+    }
+
+    .mini-card-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .mini-card-price {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: #b45309;
+    }
+
+    /* Footer */
+    .pdp-footer {
+      margin-top: auto;
+      background: var(--primary-navy);
+      color: #94a3b8;
+      padding: 24px 0;
+      font-size: 0.85rem;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .pdp-footer a {
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+
+    /* Responsive */
+    @media (max-width: 880px) {
+      .pdp-grid {
+        grid-template-columns: 1fr;
+      }
+      .pdp-gallery {
+        position: static;
+      }
+      .main-img-wrap {
+        min-height: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header-contact-badge {
+        display: none;
+      }
+      .gallery-trust-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Sticky Header -->
+  <header class="pdp-header">
+    <div class="container header-inner">
+      <div class="brand-group">
+        <a href="index.html#products" class="back-home-link" title="Return to Royal Stores Website">
+          <span>← Back to Website</span>
+        </a>
+        <div class="brand-title-wrap">
+          <span class="brand-title-guj gujarati">રોયલ સ્ટોર્સ</span>
+          <span class="brand-title-eng">ROYAL STORES ACCESSORIES</span>
+        </div>
+      </div>
+
+      <div class="header-contact-badge">
+        <span>📞 Order Desk: +91 97231 14370</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="container">
+    <div class="breadcrumb-bar">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-separator">›</span>
+      <a href="index.html#products">Accessories & Products</a>
+      <span class="breadcrumb-separator">›</span>
+      <span id="breadcrumbCurrent">Product Details</span>
+    </div>
+  </div>
+
+  <!-- Main Amazon-Style PDP Card -->
+  <main class="container">
+    <div class="pdp-main-card">
+      <div class="pdp-grid">
+
+        <!-- Left Column: High-Res Gallery -->
+        <div class="pdp-gallery">
+          <div class="main-img-wrap">
+            <span class="badge-corner" id="galleryBadge">AUTHENTIC QUALITY</span>
+            <img id="mainProductImg" src="images/product-sun-runners.jpg" alt="Product Image">
+          </div>
+
+          <div class="gallery-trust-list">
+            <div class="trust-pill">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>100% Genuine</span>
+            </div>
+            <div class="trust-pill">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+              <span>Pan-India Delivery</span>
+            </div>
+            <div class="trust-pill">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              <span>Instant WhatsApp</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Details, Selectors & Buy Now -->
+        <div class="pdp-details">
+          
+          <div class="product-meta-header">
+            <span class="brand-pill" id="brandPill">SUN BRAND</span>
+            <div class="rating-badge">
+              <span>★★★★★</span>
+              <span>5.0 Verified Product</span>
+            </div>
+          </div>
+
+          <h1 class="product-h1" id="productTitle">Loading Product...</h1>
+          <p class="product-desc-lead" id="productDesc">Loading product specifications...</p>
+
+          <!-- Price Display -->
+          <div class="price-box">
+            <div class="price-top-row">
+              <span class="price-current" id="priceDisplay">₹0</span>
+              <span class="price-original" id="mrpDisplay"></span>
+              <span class="price-discount-tag" id="discountTag" style="display:none;">24% OFF</span>
+            </div>
+            <div class="delivery-charge-tag" id="deliveryTag">
+              <span>🚚 + Delivery Charges</span>
+            </div>
+          </div>
+
+          <!-- Dynamic Wholesale Banner (if applicable) -->
+          <div class="wholesale-rule-banner" id="wholesaleBanner" style="display:none;">
+            <strong>📦 Wholesale & Bulk Available:</strong> <span id="wholesaleText">Higher Quantity = Lower Price! Contact for bulk quantity pricing slabs.</span>
+          </div>
+
+          <!-- Selectors Container (Dynamic) -->
+          <div id="dynamicSelectors"></div>
+
+          <!-- Quantity Selector -->
+          <div class="option-group">
+            <span class="option-label">Quantity:</span>
+            <div class="qty-row">
+              <div class="qty-selector">
+                <button type="button" class="qty-btn" id="qtyMinus" aria-label="Decrease Quantity">-</button>
+                <input type="number" id="qtyInput" class="qty-input" value="1" min="1" max="999" readonly>
+                <button type="button" class="qty-btn" id="qtyPlus" aria-label="Increase Quantity">+</button>
+              </div>
+              <span style="font-size: 0.9rem; color: var(--text-muted);" id="qtyUnitLabel">Pack(s)</span>
+            </div>
+          </div>
+
+          <!-- Total Calculation -->
+          <div style="font-size: 1.05rem; font-weight: 800; color: var(--primary-navy); padding-top: 6px;">
+            Estimated Total: <span style="color: var(--gold-dark);" id="totalEstimate">₹0</span> <span style="font-size: 0.85rem; color: var(--text-light); font-weight: normal;" id="totalDeliveryNote">(+ Delivery Charges)</span>
+          </div>
+
+          <!-- Buy Now on WhatsApp Button -->
+          <button type="button" class="btn-buy-whatsapp" id="btnBuyWhatsapp">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.8 14.15c-.24.67-1.39 1.28-1.92 1.36-.5.08-1.15.11-3.69-.94-3.25-1.35-5.34-4.66-5.5-4.88-.16-.22-1.32-1.75-1.32-3.34 0-1.59.83-2.37 1.13-2.69.3-.32.65-.4.87-.4.22 0 .43.01.62.01.2 0 .46-.07.72.55.27.65.92 2.25 1 2.42.08.17.13.37.03.59-.1.22-.16.35-.31.54-.16.18-.33.41-.47.55-.16.16-.33.34-.14.67.19.33.84 1.38 1.8 2.23 1.24 1.1 2.28 1.44 2.61 1.6.33.16.52.14.71-.08.2-.22.84-.98 1.06-1.31.22-.33.45-.28.75-.17.3.11 1.92.91 2.25 1.07.33.16.55.25.63.38.08.14.08.81-.16 1.48z"/>
+            </svg>
+            <span>⚡ Buy Now on WhatsApp ↗</span>
+          </button>
+
+          <p class="whatsapp-notice-sub" id="recipientNotice">
+            Redirects directly to WhatsApp: <strong id="recipientNumberText">+91 97231 14370</strong>
+          </p>
+
+          <!-- Specifications Table -->
+          <div class="specs-table-wrap">
+            <h3 class="specs-title">Technical Specifications</h3>
+            <table class="specs-table" id="specsTable">
+              <!-- Dynamically populated -->
+            </table>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Other Accessories Navigation Strip -->
+    <div class="other-products-section">
+      <h2 class="other-header">Explore Other Royal Stores Products</h2>
+      <div class="other-grid" id="otherProductsGrid">
+        <!-- Dynamically generated mini cards -->
+      </div>
+    </div>
+  </main>
+
+  <footer class="pdp-footer">
+    <div class="container">
+      <p>© 2026 <strong>Royal Stores</strong> (Shehzad Alvi) • Doorstep Pickup & Fast Delivery Services</p>
+      <p style="margin-top: 6px; font-size: 0.8rem;">
+        Website crafted by <a href="https://saiyedwebcoders.netlify.app/" target="_blank" rel="noopener noreferrer">SaiyedWebCoders</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Catalog Data & Interactive Logic -->
+  <script>
+    const CATALOG = {
+      "sun-runners": {
+        id: "sun-runners",
+        brand: "SUN BRAND",
+        title: "SUN Brand Wire Zipper Runners for Trolley Bags & Ladies Bags",
+        desc: "Heavy-duty original SUN brand metallic wire puller zipper sliders. Ideal for trolley luggage bags, duffle bags, ladies purses, and backpacks. Available in standard luggage and bag runner numbers.",
+        image: "images/product-sun-runners.jpg",
+        basePrice: 3200,
+        mrp: null,
+        deliveryTagText: "🚚 + Delivery Charges",
+        deliveryChargeText: "+ Delivery Charges",
+        recipientNumber: "919723114370",
+        recipientName: "Royal Stores (Shehzad Alvi)",
+        unitLabel: "Pack(s) (1000 Pcs each)",
+        selectors: [
+          {
+            id: "runnerSize",
+            label: "Select Runner Size / Number",
+            options: [
+              { label: "No. 5 Runner", value: "No. 5" },
+              { label: "No. 7 Runner", value: "No. 7" },
+              { label: "No. 8 Runner", value: "No. 8" },
+              { label: "No. 10 Runner", value: "No. 10" }
+            ],
+            defaultIndex: 0
+          }
+        ],
+        specs: [
+          { key: "Brand", val: "SUN Original" },
+          { key: "Packaging", val: "1,000 Pieces Bulk Polythene Pack" },
+          { key: "Type", val: "Wire Puller Slider / Runner" },
+          { key: "Application", val: "Trolley Bags, Luggage, Ladies Bags, Backpacks" },
+          { key: "Material", val: "High Strength Alloy Metal" },
+          { key: "Dispatch", val: "Ready Stock • Pan India Shipping" }
+        ],
+        getPrice: (state) => 3200
+      },
+
+      "jeans-buttons": {
+        id: "jeans-buttons",
+        brand: "ROYAL ACCESSORIES",
+        title: "Jeans Two-Part Metal Buttons (Pack of 100 Pieces)",
+        desc: "Top quality metallic two-part rivet tack buttons for jeans pants, denim jackets, dungarees, and heavy clothing. Each set includes the embossed front metal button cap and secure ribbed tack nail stud.",
+        image: "images/product-jeans-buttons.jpg",
+        basePrice: 599,
+        mrp: 799,
+        deliveryTagText: "🚚 + Delivery Charges",
+        deliveryChargeText: "+ Delivery Charges",
+        recipientNumber: "919723114370",
+        recipientName: "Royal Stores (Shehzad Alvi)",
+        unitLabel: "Pack(s) (100 Sets)",
+        selectors: [
+          {
+            id: "buttonPack",
+            label: "Package Option",
+            options: [
+              { label: "100 Pieces Complete Set (Cap + Tack)", value: "100 Pcs Pack" }
+            ],
+            defaultIndex: 0
+          }
+        ],
+        specs: [
+          { key: "Contents", val: "100 Pieces (100 Caps + 100 Tack Nails)" },
+          { key: "Type", val: "Two-Part Metal Tack Button" },
+          { key: "Finishes", val: "Antique Brass / Bronze & Gunmetal" },
+          { key: "Application", val: "Jeans, Denim Jackets, Workwear, Trousers" },
+          { key: "Fitting", val: "Hammer / Die Press Fit" }
+        ],
+        getPrice: (state) => 599
+      },
+
+      "brass-zippers": {
+        id: "brass-zippers",
+        brand: "ROYAL DENIM ACCESSORIES",
+        title: "Premium Brass Metal Jeans Zippers (50 Pcs Pouch Pack)",
+        desc: "Original top quality smooth running metallic jeans zippers. Made with high-tensile brass/copper metal teeth on premium dark navy/black cotton tape with auto-locking puller sliders. Built for heavy-duty denim.",
+        image: "images/product-brass-zippers.jpg",
+        basePrice: 1499,
+        mrp: 1899,
+        deliveryTagText: "🚚 + Delivery Charges",
+        deliveryChargeText: "+ Delivery Charges",
+        recipientNumber: "919723114370",
+        recipientName: "Royal Stores (Shehzad Alvi)",
+        unitLabel: "Pouch(es) (50 Zippers)",
+        selectors: [
+          {
+            id: "zipperLength",
+            label: "Select Length Option",
+            options: [
+              { label: "5 Inch (Jeans Standard)", value: "5 Inch" },
+              { label: "6 Inch (Trousers & Denims)", value: "6 Inch" },
+              { label: "7 Inch (Heavy Denims)", value: "7 Inch" }
+            ],
+            defaultIndex: 1
+          }
+        ],
+        specs: [
+          { key: "Quantity", val: "50 Zippers in One Pouch" },
+          { key: "Metal Type", val: "Brass / Copper Metal Teeth" },
+          { key: "Slider Type", val: "Auto-Lock Metal Puller" },
+          { key: "Available Lengths", val: "5 Inch, 6 Inch, 7 Inch" },
+          { key: "Tape Color", val: "Dark Navy / Black" },
+          { key: "Quality", val: "Smooth Running • Rust Resistant" }
+        ],
+        getPrice: (state) => 1499
+      },
+
+      "jacket-zippers": {
+        id: "jacket-zippers",
+        brand: "HEAVY-DUTY OUTERWEAR",
+        title: "Heavy-Duty Jacket & Outerwear Zippers (26\" & 28\" Lengths)",
+        desc: "High performance separating open-end zippers engineered for winter jackets, biker jackets, windcheaters, hoodies, and outerwear. Available in molded Fiber (Vislon) and Brass Metal chain options in single and 50-piece wholesale packs.",
+        image: "images/product-jacket-zippers.jpg",
+        basePrice: 299,
+        mrp: null,
+        deliveryTagText: "🚚 + Delivery Charges",
+        deliveryChargeText: "+ Delivery Charges",
+        recipientNumber: "919723114370",
+        recipientName: "Royal Stores (Shehzad Alvi)",
+        unitLabel: "Unit(s)",
+        selectors: [
+          {
+            id: "chainType",
+            label: "1. Select Chain Type",
+            options: [
+              { label: "Fiber Chain (Smooth Vislon)", value: "Fiber Chain" },
+              { label: "Metal Chain (Golden Brass)", value: "Metal Chain" }
+            ],
+            defaultIndex: 0
+          },
+          {
+            id: "jacketLength",
+            label: "2. Select Length",
+            options: [
+              { label: "26 Inch", value: "26 Inch" },
+              { label: "28 Inch", value: "28 Inch" }
+            ],
+            defaultIndex: 0
+          },
+          {
+            id: "packMode",
+            label: "3. Quantity Mode",
+            options: [
+              { label: "Single Piece", value: "Single Piece" },
+              { label: "Wholesale Pack (50 Pieces Pouch)", value: "Wholesale (50 Pcs)" }
+            ],
+            defaultIndex: 0
+          }
+        ],
+        specs: [
+          { key: "Lengths Available", val: "26 Inch & 28 Inch" },
+          { key: "Chain Options", val: "Fiber Chain (Vislon) / Metal Chain (Golden Brass)" },
+          { key: "Style", val: "Open-End Separating Zipper (For Jackets)" },
+          { key: "Single Fiber Price", val: "₹299 INR + Delivery" },
+          { key: "Single Metal Price", val: "₹499 INR + Delivery" },
+          { key: "Wholesale 50 Fiber", val: "₹999 INR + Delivery" },
+          { key: "Wholesale 50 Metal", val: "₹2,999 INR + Delivery" }
+        ],
+        getPrice: (state) => {
+          const type = state.chainType || "Fiber Chain";
+          const pack = state.packMode || "Single Piece";
+          if (pack.includes("Wholesale")) {
+            return type === "Metal Chain" ? 2999 : 999;
+          } else {
+            return type === "Metal Chain" ? 499 : 299;
+          }
+        }
+      },
+
+      "fabribond-velcro": {
+        id: "fabribond-velcro",
+        brand: "FABRIBOND PLUS",
+        title: "FabriBond Plus Vulcanized Repair Sheet + Velcro Fastener Pack",
+        desc: "Authentic heat-activated vulcanized fabric bonding sheet (5 in × 20 in) paired with durable Hook & Loop Velcro fastener tape. Repair torn clothes, jackets, jeans, travel bags, and uniforms with an ordinary domestic iron without any needle or thread.",
+        image: "images/product-fabribond.jpg",
+        basePrice: 99,
+        mrp: 130,
+        discountText: "24% OFF",
+        deliveryTagText: "🚚 + Delivery Charge ₹50",
+        deliveryChargeText: "+ Delivery Charge ₹50",
+        recipientNumber: "918347874084",
+        recipientName: "FabriBond Founder",
+        unitLabel: "Pack(s)",
+        wholesaleRule: "Wholesale available! Price depends on order quantity: Higher Quantity = Lower Price! Special bulk slabs for tailors and businesses.",
+        selectors: [
+          {
+            id: "orderMode",
+            label: "Select Order Type",
+            options: [
+              { label: "Retail Pack (1 Sheet 5\"×20\" + Velcro) – ₹99", value: "Retail Pack (₹99)" },
+              { label: "Wholesale / Bulk Inquiry (Special Slabs)", value: "Wholesale Inquiry" }
+            ],
+            defaultIndex: 0
+          }
+        ],
+        specs: [
+          { key: "Brand", val: "FabriBond Plus (Royal Stores Family)" },
+          { key: "Sheet Size", val: "5 in × 20 in (12.7 cm × 50.8 cm)" },
+          { key: "Contents", val: "1 Vulcanized Sheet + Matching Velcro Fastener Strips" },
+          { key: "Retail Price", val: "₹99 INR (MRP ₹130, 24% OFF)" },
+          { key: "Delivery Charge", val: "₹50 INR (Fixed retail delivery)" },
+          { key: "Wholesale Rule", val: "Available in bulk rolls/sheets (Higher Qty = Lower Rate)" },
+          { key: "Application", val: "Normal Domestic Iron (Heat-Activated, 15-20s)" },
+          { key: "Founder Desk", val: "+91 83478 74084" }
+        ],
+        getPrice: (state) => {
+          return state.orderMode && state.orderMode.includes("Wholesale") ? 0 : 99;
+        }
+      },
+
+      "megibha-elastic": {
+        id: "megibha-elastic",
+        brand: "MEGIBHA",
+        title: "Megibha Heavy-Duty Tailoring Elastic Roll (90 Foot Roll)",
+        desc: "Premium quality woven stretch elastic roll for garment waistbands, trousers, sportswear, skirts, luggage straps, and fabric alterations. High tensile elasticity that retains stretch memory even after repeated washes.",
+        image: "images/product-elastic-rolls.jpg",
+        basePrice: 999,
+        mrp: 1299,
+        deliveryTagText: "🚚 + Delivery Charges",
+        deliveryChargeText: "+ Delivery Charges",
+        recipientNumber: "919723114370",
+        recipientName: "Royal Stores (Shehzad Alvi)",
+        unitLabel: "Roll(s) (90 Foot each)",
+        selectors: [
+          {
+            id: "elasticWidth",
+            label: "1. Select Width Size",
+            options: [
+              { label: "0.5\" / 1\" Inch", value: "1 Inch" },
+              { label: "1.5 Inch", value: "1.5 Inch" },
+              { label: "2 Inch", value: "2 Inch" },
+              { label: "2.5 Inch", value: "2.5 Inch" }
+            ],
+            defaultIndex: 0
+          },
+          {
+            id: "elasticColor",
+            label: "2. Select Color",
+            options: [
+              { label: "Optic White", value: "White" },
+              { label: "Deep Jet Black", value: "Black" }
+            ],
+            defaultIndex: 0
+          }
+        ],
+        specs: [
+          { key: "Brand", val: "Megibha Original" },
+          { key: "Roll Length", val: "90 Foot (~27.4 Meters / 30 Yards)" },
+          { key: "Width Options", val: "1\", 1.5\", 2\", 2.5\" Inch" },
+          { key: "Colors", val: "White & Black" },
+          { key: "Material", val: "Heavy-Duty Woven Polyester Elastic" },
+          { key: "Durability", val: "Washable • Long-Lasting Stretch" }
+        ],
+        getPrice: (state) => 999
+      }
+    };
+
+    // State
+    let currentId = "sun-runners";
+    let currentState = {};
+    let currentQty = 1;
+
+    function getParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    function initPage() {
+      const reqId = getParam('id');
+      if (reqId && CATALOG[reqId]) {
+        currentId = reqId;
+      } else {
+        currentId = "sun-runners";
+      }
+
+      loadProduct(currentId);
+      renderOtherProducts();
+      setupQtyButtons();
+    }
+
+    function loadProduct(id) {
+      currentId = id;
+      const product = CATALOG[id];
+      if (!product) return;
+
+      currentState = {};
+      currentQty = 1;
+      document.getElementById('qtyInput').value = currentQty;
+
+      // Header & Breadcrumb
+      document.title = product.title + " | Royal Stores";
+      document.getElementById('breadcrumbCurrent').textContent = product.title;
+      document.getElementById('brandPill').textContent = product.brand;
+      document.getElementById('productTitle').textContent = product.title;
+      document.getElementById('productDesc').textContent = product.desc;
+      document.getElementById('mainProductImg').src = product.image;
+      document.getElementById('mainProductImg').alt = product.title;
+      document.getElementById('qtyUnitLabel').textContent = product.unitLabel;
+
+      // Delivery & MRP Tags
+      document.getElementById('deliveryTag').textContent = product.deliveryTagText;
+      const mrpEl = document.getElementById('mrpDisplay');
+      const discountEl = document.getElementById('discountTag');
+      if (product.mrp) {
+        mrpEl.textContent = "₹" + product.mrp;
+        mrpEl.style.display = "inline";
+        discountEl.style.display = "inline";
+        discountEl.textContent = product.discountText || "SPECIAL OFFER";
+      } else {
+        mrpEl.style.display = "none";
+        discountEl.style.display = "none";
+      }
+
+      // Wholesale banner
+      const wholesaleBanner = document.getElementById('wholesaleBanner');
+      if (product.wholesaleRule) {
+        wholesaleBanner.style.display = "block";
+        document.getElementById('wholesaleText').textContent = product.wholesaleRule;
+      } else {
+        wholesaleBanner.style.display = "none";
+      }
+
+      // Recipient notice
+      document.getElementById('recipientNumberText').textContent = "+" + product.recipientNumber + " (" + product.recipientName + ")";
+
+      // Selectors
+      const selContainer = document.getElementById('dynamicSelectors');
+      selContainer.innerHTML = "";
+
+      if (product.selectors && product.selectors.length > 0) {
+        product.selectors.forEach(sel => {
+          currentState[sel.id] = sel.options[sel.defaultIndex].value;
+
+          const group = document.createElement('div');
+          group.className = "option-group";
+
+          const labelRow = document.createElement('div');
+          labelRow.className = "option-label";
+          labelRow.innerHTML = `<span>${sel.label}:</span> <span class="option-selected-text" id="label_${sel.id}">${currentState[sel.id]}</span>`;
+          group.appendChild(labelRow);
+
+          const pillsWrap = document.createElement('div');
+          pillsWrap.className = "pills-container";
+
+          sel.options.forEach((opt, idx) => {
+            const btn = document.createElement('button');
+            btn.type = "button";
+            btn.className = "pill-btn" + (idx === sel.defaultIndex ? " active" : "");
+            btn.textContent = opt.label;
+            btn.addEventListener('click', () => {
+              pillsWrap.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+              btn.classList.add('active');
+              currentState[sel.id] = opt.value;
+              const lbl = document.getElementById("label_" + sel.id);
+              if (lbl) lbl.textContent = opt.value;
+              updatePriceCalculation();
+            });
+            pillsWrap.appendChild(btn);
+          });
+
+          group.appendChild(pillsWrap);
+          selContainer.appendChild(group);
+        });
+      }
+
+      // Specs Table
+      const specsTable = document.getElementById('specsTable');
+      specsTable.innerHTML = "";
+      if (product.specs) {
+        product.specs.forEach(s => {
+          const row = document.createElement('tr');
+          row.innerHTML = `<td class="spec-key">${s.key}</td><td class="spec-val">${s.val}</td>`;
+          specsTable.appendChild(row);
+        });
+      }
+
+      updatePriceCalculation();
+    }
+
+    function updatePriceCalculation() {
+      const product = CATALOG[currentId];
+      if (!product) return;
+
+      const unitPrice = product.getPrice(currentState);
+      const priceDisplay = document.getElementById('priceDisplay');
+      const totalEst = document.getElementById('totalEstimate');
+      const deliveryNote = document.getElementById('totalDeliveryNote');
+
+      if (unitPrice === 0) {
+        priceDisplay.textContent = "Wholesale Quote";
+        totalEst.textContent = "Custom Bulk Quotation";
+        deliveryNote.textContent = "(Based on Qty)";
+      } else {
+        priceDisplay.textContent = "₹" + unitPrice.toLocaleString('en-IN');
+        const total = unitPrice * currentQty;
+        totalEst.textContent = "₹" + total.toLocaleString('en-IN');
+        deliveryNote.textContent = "(" + product.deliveryChargeText + ")";
+      }
+    }
+
+    function setupQtyButtons() {
+      const minus = document.getElementById('qtyMinus');
+      const plus = document.getElementById('qtyPlus');
+      const input = document.getElementById('qtyInput');
+
+      minus.addEventListener('click', () => {
+        if (currentQty > 1) {
+          currentQty--;
+          input.value = currentQty;
+          updatePriceCalculation();
+        }
+      });
+
+      plus.addEventListener('click', () => {
+        if (currentQty < 999) {
+          currentQty++;
+          input.value = currentQty;
+          updatePriceCalculation();
+        }
+      });
+
+      // Buy WhatsApp
+      document.getElementById('btnBuyWhatsapp').addEventListener('click', handleWhatsAppOrder);
+    }
+
+    function handleWhatsAppOrder() {
+      const product = CATALOG[currentId];
+      if (!product) return;
+
+      const unitPrice = product.getPrice(currentState);
+      const totalAmount = unitPrice * currentQty;
+
+      let msg = "This message from your Royals new website 2026.\n\n";
+
+      if (product.id === "fabribond-velcro" && currentState.orderMode && currentState.orderMode.includes("Wholesale")) {
+        // Wholesale Inquiry for FabriBond
+        msg += "Hello " + product.recipientName + ",\n\n";
+        msg += "I want to inquire about Wholesale / Bulk Purchase for FabriBond Plus:\n";
+        msg += "- Product: FabriBond Plus Vulcanized Sheets / Rolls & Velcro\n";
+        msg += "- Order Type: Wholesale / Bulk Supply\n";
+        msg += "- Target Quantity: " + currentQty + " " + product.unitLabel + "\n";
+        msg += "- Rule Noted: Higher quantity = Lower wholesale price slab\n\n";
+        msg += "Please provide your best wholesale rate quotation and delivery options.\n";
+        msg += "Thank you!";
+      } else {
+        // Standard Product Order
+        msg += "Hello " + product.recipientName + ",\n\n";
+        msg += "I would like to place an order for:\n";
+        msg += "• Product: " + product.title + "\n";
+
+        // Append selected options
+        if (product.selectors) {
+          product.selectors.forEach(sel => {
+            const val = currentState[sel.id];
+            msg += "• " + sel.label + ": " + val + "\n";
+          });
+        }
+
+        msg += "• Quantity: " + currentQty + " " + product.unitLabel + "\n";
+        if (unitPrice > 0) {
+          msg += "• Item Price: ₹" + unitPrice.toLocaleString('en-IN') + " each\n";
+          msg += "• Total Price: ₹" + totalAmount.toLocaleString('en-IN') + " INR\n";
+          msg += "• Delivery Charge: " + product.deliveryChargeText + "\n\n";
+        } else {
+          msg += "• Price Inquiry: Wholesale quotation requested\n\n";
+        }
+
+        msg += "Please confirm my order and share delivery and payment details.\n";
+        msg += "Thank you!";
+      }
+
+      const encoded = encodeURIComponent(msg);
+      const whatsappUrl = "https://wa.me/" + product.recipientNumber + "?text=" + encoded;
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    }
+
+    function renderOtherProducts() {
+      const container = document.getElementById('otherProductsGrid');
+      container.innerHTML = "";
+
+      Object.keys(CATALOG).forEach(key => {
+        if (key === currentId) return; // skip active
+        const item = CATALOG[key];
+
+        const card = document.createElement('a');
+        card.href = `product.html?id=${item.id}`;
+        card.className = "mini-card";
+        card.innerHTML = `
+          <div>
+            <img src="${item.image}" alt="${item.title}">
+            <h4 class="mini-card-title">${item.title}</h4>
+          </div>
+          <div class="mini-card-price">From ₹${item.basePrice.toLocaleString('en-IN')}</div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', initPage);
+  </script>
+</body>
+</html>
