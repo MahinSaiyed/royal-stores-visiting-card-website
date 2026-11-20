@@ -417,24 +417,6 @@
       transform: translateY(-7.5px) rotate(-45deg);
     }
 
-    [data-theme="dark"] .hamburger-btn {
-      background: #0d1e34;
-      border-color: rgba(245, 158, 11, 0.45);
-    }
-
-    [data-theme="dark"] .hamburger-btn span {
-      background: #fbbf24;
-    }
-
-    [data-theme="dark"] .hamburger-btn.active {
-      background: var(--gold-primary);
-      border-color: var(--gold-light);
-    }
-
-    [data-theme="dark"] .hamburger-btn.active span {
-      background: #0a1c32;
-    }
-
     /* Enhanced Mobile Nav Backdrop */
     .mobile-nav-backdrop {
       display: none;
@@ -476,26 +458,6 @@
       pointer-events: auto !important;
     }
 
-    .mobile-theme-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 14px;
-      background: #f1f5f9;
-      border: 1px solid #e2e8f0;
-      border-radius: var(--radius-md);
-      margin-bottom: 8px;
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: #0a1c32;
-    }
-
-    [data-theme="dark"] .mobile-theme-row {
-      background: #081423;
-      border-color: rgba(255, 255, 255, 0.12);
-      color: var(--gold-light);
-    }
-
     .mobile-nav-link {
       font-size: 1.05rem;
       font-weight: 600;
@@ -511,15 +473,6 @@
 
     .mobile-nav-link:hover {
       color: var(--gold-dark);
-    }
-
-    [data-theme="dark"] .mobile-nav-link {
-      color: #f8fafc;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    [data-theme="dark"] .mobile-nav-link:hover {
-      color: var(--gold-primary);
     }
 
     .mobile-nav-actions {
@@ -2084,9 +2037,6 @@
     }
 
     @media (max-width: 820px) {
-      #themeToggleBtn {
-        display: none !important;
-      }
       .nav-menu {
         display: none;
       }
@@ -2247,134 +2197,6 @@
     }
   
     /* ==========================================================================
-       DARK MODE THEME SYSTEM
-       ========================================================================== */
-    [data-theme="dark"] {
-      --primary-navy: #f8fafc;
-      --secondary-navy: #e2e8f0;
-      --accent-navy: #94a3b8;
-      --text-dark: #f8fafc;
-      --text-muted: #cbd5e1;
-      --text-light: #94a3b8;
-
-      --bg-body: #060e19;
-      --bg-gradient: linear-gradient(180deg, #060e19 0%, #0a1728 35%, #060e19 100%);
-      --bg-card: #0d1e34;
-      --bg-light-blue: #112642;
-
-      --border-subtle: rgba(245, 158, 11, 0.25);
-      --border-light: rgba(255, 255, 255, 0.12);
-
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
-      --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.5);
-      --shadow-lg: 0 16px 36px -6px rgba(0, 0, 0, 0.6);
-      --shadow-xl: 0 24px 48px -12px rgba(0, 0, 0, 0.8);
-    }
-
-    [data-theme="dark"] .site-header {
-      background: rgba(6, 14, 25, 0.96);
-      border-bottom: 2px solid var(--gold-dark);
-    }
-
-    [data-theme="dark"] .nav-link {
-      color: #e2e8f0;
-    }
-
-    [data-theme="dark"] .nav-link:hover {
-      color: var(--gold-light);
-    }
-
-    [data-theme="dark"] .service-card,
-    [data-theme="dark"] .repair-item-card,
-    [data-theme="dark"] .condition-card,
-    [data-theme="dark"] .contact-info-card,
-    [data-theme="dark"] .contact-qr-card,
-    [data-theme="dark"] .catalog-card,
-    [data-theme="dark"] .enquiry-card,
-    [data-theme="dark"] .mobile-nav,
-    [data-theme="dark"] .product-callout-card,
-    [data-theme="dark"] .success-modal,
-    [data-theme="dark"] .policy-modal-card {
-      background: #0d1e34;
-      border-color: rgba(255, 255, 255, 0.12);
-      color: #f1f5f9;
-    }
-
-    [data-theme="dark"] .form-control {
-      background: #081423;
-      border-color: rgba(255, 255, 255, 0.18);
-      color: #ffffff;
-    }
-
-    [data-theme="dark"] .form-control:focus {
-      border-color: var(--gold-primary);
-      background: #0a182a;
-    }
-
-    [data-theme="dark"] .catalog-meta-box {
-      background: #081423;
-    }
-
-    [data-theme="dark"] .mobile-sticky-bar {
-      background: rgba(6, 14, 25, 0.97);
-      border-top-color: rgba(245, 158, 11, 0.25);
-    }
-
-    [data-theme="dark"] .mobile-sticky-bar .btn-secondary {
-      background: #0d1e34;
-      border-color: rgba(255, 255, 255, 0.15);
-      color: #f1f5f9;
-    }
-      border-color: rgba(255, 255, 255, 0.08);
-    }
-
-    [data-theme="dark"] .products-section {
-      background: linear-gradient(180deg, #07101c 0%, #0d1f36 50%, #07101c 100%);
-      border-color: rgba(245, 158, 11, 0.2);
-    }
-
-    [data-theme="dark"] .footer-section {
-      background: #03080f;
-    }
-
-    /* Theme Toggle Buttons */
-    .theme-toggle-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1.5px solid rgba(245, 158, 11, 0.45);
-      color: var(--gold-light);
-      padding: 7px 14px;
-      border-radius: var(--radius-full);
-      font-size: 0.85rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-
-    .theme-toggle-btn:hover {
-      background: var(--gold-primary);
-      color: #0a1c32;
-      border-color: var(--gold-dark);
-      transform: translateY(-1px);
-    }
-
-    .mobile-theme-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 14px;
-      background: rgba(255, 255, 255, 0.06);
-      border-radius: var(--radius-md);
-      margin-bottom: 14px;
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: var(--gold-light);
-    }
-
-    /* ==========================================================================
        WELCOME TERMS & CONDITIONS POPUP MODAL
        ========================================================================== */
     .policy-modal-backdrop {
@@ -2475,11 +2297,6 @@
       padding: 14px 16px;
     }
 
-    [data-theme="dark"] .policy-point-item {
-      background: rgba(255, 255, 255, 0.04);
-      border-color: rgba(255, 255, 255, 0.1);
-    }
-
     .point-num {
       width: 28px;
       height: 28px;
@@ -2503,21 +2320,12 @@
       font-weight: 600;
     }
 
-    [data-theme="dark"] .point-guj {
-      color: var(--gold-light);
-    }
-
     .policy-modal-footer {
       padding: 16px 24px;
       background: #f8fafc;
       border-top: 1px solid #e2e8f0;
       display: flex;
       justify-content: flex-end;
-    }
-
-    [data-theme="dark"] .policy-modal-footer {
-      background: #081423;
-      border-color: rgba(255, 255, 255, 0.1);
     }
 
     .policy-agree-btn {
@@ -2591,11 +2399,6 @@
 
       <!-- Header Actions -->
       <div class="header-actions">
-        <!-- Dark Mode Toggle Button (Desktop) -->
-        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Dark / Light Mode" title="Toggle Dark/Light Mode">
-          <span id="themeBtnIcon">🌙</span>
-          <span id="themeBtnText">Dark</span>
-        </button>
         <!-- Prominent Buy Product Button -->
         <a href="#products" class="btn-buy-product" title="Shop Tailoring & Repair Accessories">
           <span class="gold-dot"></span>
@@ -2619,14 +2422,6 @@
 
   <!-- Mobile Navigation Drawer -->
     <div class="mobile-nav" id="mobileNav">
-      <!-- Dark Mode Row (Mobile) -->
-      <div class="mobile-theme-row">
-        <span>Dark Mode (ડાર્ક મોડ):</span>
-        <button type="button" class="theme-toggle-btn" id="mobileThemeToggleBtn" aria-label="Toggle Dark / Light Mode">
-          <span id="mobileThemeBtnIcon">🌙</span>
-          <span id="mobileThemeBtnText">Dark</span>
-        </button>
-      </div>
       <a href="#hero" class="mobile-nav-link">Home <span>→</span></a>
       <a href="#about" class="mobile-nav-link">About Us <span>→</span></a>
       <a href="#services" class="mobile-nav-link">Services <span>→</span></a>
@@ -4147,53 +3942,11 @@
       }
     });
   
-    /* ==========================================================================
-       THEME SYSTEM (Dark / Light Mode with LocalStorage)
-       ========================================================================== */
-    function initTheme() {
-      const savedTheme = localStorage.getItem("royal_theme") || "light";
-      applyTheme(savedTheme);
-    }
-
-    function applyTheme(theme) {
-      if (theme === "dark") {
-        document.documentElement.setAttribute("data-theme", "dark");
-        updateThemeButtons("dark");
-        localStorage.setItem("royal_theme", "dark");
-      } else {
-        document.documentElement.removeAttribute("data-theme");
-        updateThemeButtons("light");
-        localStorage.setItem("royal_theme", "light");
-      }
-    }
-
-    function updateThemeButtons(theme) {
-      const isDark = (theme === "dark");
-      const icon = isDark ? "☀️" : "🌙";
-      const text = isDark ? "Light" : "Dark";
-
-      const dIcon = document.getElementById("themeBtnIcon");
-      const dText = document.getElementById("themeBtnText");
-      if (dIcon) dIcon.textContent = icon;
-      if (dText) dText.textContent = text;
-
-      const mIcon = document.getElementById("mobileThemeBtnIcon");
-      const mText = document.getElementById("mobileThemeBtnText");
-      if (mIcon) mIcon.textContent = icon;
-      if (mText) mText.textContent = text;
-    }
-
-    function toggleTheme() {
-      const currentTheme = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
-      const newTheme = (currentTheme === "dark") ? "light" : "dark";
-      applyTheme(newTheme);
-    }
-
-    const deskThemeBtn = document.getElementById("themeToggleBtn");
-    if (deskThemeBtn) deskThemeBtn.addEventListener("click", toggleTheme);
-
-    const mobThemeBtn = document.getElementById("mobileThemeToggleBtn");
-    if (mobThemeBtn) mobThemeBtn.addEventListener("click", toggleTheme);
+    // Purge any legacy dark theme setting from localStorage
+    try {
+      localStorage.removeItem("royal_theme");
+      document.documentElement.removeAttribute("data-theme");
+    } catch (e) {}
 
     /* ==========================================================================
        WELCOME POLICY POPUP SYSTEM
@@ -4217,14 +3970,12 @@
       if (modal) modal.style.display = "flex";
     }
 
-    // Initialize Theme and Policy Check on DOM load
+    // Initialize Policy Check on DOM load
     window.addEventListener("DOMContentLoaded", () => {
-      initTheme();
       checkPolicyModal();
     });
     // Fallback immediate check in case DOMContentLoaded already fired
     if (document.readyState === "complete" || document.readyState === "interactive") {
-      initTheme();
       checkPolicyModal();
     }
 

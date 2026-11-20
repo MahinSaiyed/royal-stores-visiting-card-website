@@ -660,94 +660,6 @@
       }
     }
   
-    /* Dark Mode Theme */
-    [data-theme="dark"] {
-      --primary-navy: #f8fafc;
-      --secondary-navy: #e2e8f0;
-      --text-dark: #f8fafc;
-      --text-muted: #cbd5e1;
-      --text-light: #94a3b8;
-      --bg-body: #060e19;
-      --bg-card: #0d1e34;
-      --border-light: rgba(255, 255, 255, 0.12);
-    }
-    [data-theme="dark"] .pdp-header {
-      background: #03080f;
-    }
-    [data-theme="dark"] .pdp-main-card,
-    [data-theme="dark"] .mini-card,
-    [data-theme="dark"] .address-modal-card {
-      background: #0d1e34;
-      border-color: rgba(255, 255, 255, 0.12);
-      color: #f1f5f9;
-    }
-    [data-theme="dark"] .main-img-wrap {
-      background: #081423;
-      border-color: rgba(255, 255, 255, 0.1);
-    }
-    [data-theme="dark"] .trust-pill {
-      background: #081423;
-      border-color: rgba(255, 255, 255, 0.1);
-      color: #cbd5e1;
-    }
-    [data-theme="dark"] .brand-pill {
-      background: rgba(245, 158, 11, 0.15);
-      color: var(--gold-light);
-    }
-    [data-theme="dark"] .price-box {
-      background: #081423;
-      border-color: rgba(245, 158, 11, 0.35);
-    }
-    [data-theme="dark"] .pill-btn {
-      background: #081423;
-      color: #e2e8f0;
-      border-color: rgba(255, 255, 255, 0.2);
-    }
-    [data-theme="dark"] .pill-btn:hover {
-      background: #112642;
-    }
-    [data-theme="dark"] .pill-btn.active {
-      background: var(--gold-primary);
-      color: #0a1c32;
-      border-color: var(--gold-light);
-    }
-    [data-theme="dark"] .specs-table td {
-      border-color: rgba(255, 255, 255, 0.1);
-    }
-    [data-theme="dark"] .specs-table tr:nth-child(even) {
-      background: #081423;
-    }
-    [data-theme="dark"] .form-input,
-    [data-theme="dark"] .form-textarea {
-      background: #081423;
-      color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.2);
-    }
-    [data-theme="dark"] .pdp-footer {
-      background: #03080f;
-    }
-
-    /* Theme Toggle Button */
-    .theme-toggle-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1.5px solid rgba(245, 158, 11, 0.45);
-      color: var(--gold-light);
-      padding: 6px 12px;
-      border-radius: var(--radius-full);
-      font-size: 0.82rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-    .theme-toggle-btn:hover {
-      background: var(--gold-primary);
-      color: #0a1c32;
-    }
-
     /* Address & Payment Modal */
     .address-modal-backdrop {
       position: fixed;
@@ -803,10 +715,6 @@
       padding: 12px 14px;
       font-size: 0.88rem;
     }
-    [data-theme="dark"] .order-mini-summary {
-      background: #081423;
-      border-color: rgba(255, 255, 255, 0.1);
-    }
     .form-group-pdp {
       display: flex;
       flex-direction: column;
@@ -839,9 +747,6 @@
       border-color: #ef4444;
       background: #fff5f5;
     }
-    [data-theme="dark"] .form-input.err, [data-theme="dark"] .form-textarea.err {
-      background: #200808;
-    }
     .form-err-text {
       color: #ef4444;
       font-size: 0.8rem;
@@ -866,9 +771,6 @@
     .payment-option-card:hover {
       border-color: var(--gold-primary);
       background: #f8fafc;
-    }
-    [data-theme="dark"] .payment-option-card:hover {
-      background: #112642;
     }
     .payment-option-card.selected {
       border-color: var(--gold-primary);
@@ -896,10 +798,6 @@
       justify-content: flex-end;
       gap: 10px;
     }
-    [data-theme="dark"] .address-modal-footer {
-      background: #081423;
-      border-color: rgba(255, 255, 255, 0.1);
-    }
     .btn-modal-cancel {
       padding: 10px 18px;
       background: #e2e8f0;
@@ -909,10 +807,6 @@
       font-weight: 700;
       color: var(--secondary-navy);
       cursor: pointer;
-    }
-    [data-theme="dark"] .btn-modal-cancel {
-      background: #1f3148;
-      color: #e2e8f0;
     }
     .btn-modal-confirm {
       padding: 12px 22px;
@@ -945,11 +839,6 @@
           <span class="brand-title-eng">ROYAL STORES ACCESSORIES</span>
         </div>
       </div>
-
-      <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Dark / Light Mode" style="margin-right: 10px;">
-        <span id="themeBtnIcon">🌙</span>
-        <span id="themeBtnText">Dark</span>
-      </button>
       <div class="header-contact-badge">
         <span>📞 Order Desk: +91 97231 14370</span>
       </div>
@@ -1595,37 +1484,11 @@
     }
 
     
-    /* ==========================================================================
-       THEME SUPPORT (product.html)
-       ========================================================================== */
-    function initTheme() {
-      const savedTheme = localStorage.getItem('royal_theme') || 'light';
-      applyTheme(savedTheme);
-    }
-    function applyTheme(theme) {
-      if (theme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        const icon = document.getElementById('themeBtnIcon');
-        const txt = document.getElementById('themeBtnText');
-        if (icon) icon.textContent = '☀️';
-        if (txt) txt.textContent = 'Light';
-        localStorage.setItem('royal_theme', 'dark');
-      } else {
-        document.documentElement.removeAttribute('data-theme');
-        const icon = document.getElementById('themeBtnIcon');
-        const txt = document.getElementById('themeBtnText');
-        if (icon) icon.textContent = '🌙';
-        if (txt) txt.textContent = 'Dark';
-        localStorage.setItem('royal_theme', 'light');
-      }
-    }
-    function toggleTheme() {
-      const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-      applyTheme(current === 'dark' ? 'light' : 'dark');
-    }
-    const themeBtn = document.getElementById('themeToggleBtn');
-    if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
-    initTheme();
+    // Purge any legacy dark theme setting from localStorage
+    try {
+      localStorage.removeItem('royal_theme');
+      document.documentElement.removeAttribute('data-theme');
+    } catch (e) {}
 
     /* ==========================================================================
        ADDRESS & PAYMENT POPUP LOGIC
