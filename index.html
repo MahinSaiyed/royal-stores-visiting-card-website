@@ -290,16 +290,17 @@
       display: flex;
       align-items: center;
       list-style: none;
-      gap: 28px;
+      gap: 14px;
     }
 
     .nav-link {
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.88rem;
       color: var(--text-dark);
       transition: color 0.2s ease;
       position: relative;
       padding: 6px 0;
+      white-space: nowrap;
     }
 
     .nav-link::after {
@@ -2162,6 +2163,288 @@
         gap: 4px;
       }
     }
+  
+    /* ==========================================================================
+       DARK MODE THEME SYSTEM
+       ========================================================================== */
+    [data-theme="dark"] {
+      --primary-navy: #f8fafc;
+      --secondary-navy: #e2e8f0;
+      --accent-navy: #94a3b8;
+      --text-dark: #f8fafc;
+      --text-muted: #cbd5e1;
+      --text-light: #94a3b8;
+
+      --bg-body: #060e19;
+      --bg-gradient: linear-gradient(180deg, #060e19 0%, #0a1728 35%, #060e19 100%);
+      --bg-card: #0d1e34;
+      --bg-light-blue: #112642;
+
+      --border-subtle: rgba(245, 158, 11, 0.25);
+      --border-light: rgba(255, 255, 255, 0.12);
+
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+      --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.5);
+      --shadow-lg: 0 16px 36px -6px rgba(0, 0, 0, 0.6);
+      --shadow-xl: 0 24px 48px -12px rgba(0, 0, 0, 0.8);
+    }
+
+    [data-theme="dark"] .site-header {
+      background: rgba(6, 14, 25, 0.96);
+      border-bottom: 2px solid var(--gold-dark);
+    }
+
+    [data-theme="dark"] .nav-link {
+      color: #e2e8f0;
+    }
+
+    [data-theme="dark"] .nav-link:hover {
+      color: var(--gold-light);
+    }
+
+    [data-theme="dark"] .service-card,
+    [data-theme="dark"] .repair-item-card,
+    [data-theme="dark"] .condition-card,
+    [data-theme="dark"] .contact-info-card,
+    [data-theme="dark"] .contact-qr-card,
+    [data-theme="dark"] .catalog-card,
+    [data-theme="dark"] .enquiry-card,
+    [data-theme="dark"] .mobile-nav,
+    [data-theme="dark"] .product-callout-card,
+    [data-theme="dark"] .success-modal,
+    [data-theme="dark"] .policy-modal-card {
+      background: #0d1e34;
+      border-color: rgba(255, 255, 255, 0.12);
+      color: #f1f5f9;
+    }
+
+    [data-theme="dark"] .form-control {
+      background: #081423;
+      border-color: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+    }
+
+    [data-theme="dark"] .form-control:focus {
+      border-color: var(--gold-primary);
+      background: #0a182a;
+    }
+
+    [data-theme="dark"] .catalog-meta-box {
+      background: #081423;
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    [data-theme="dark"] .products-section {
+      background: linear-gradient(180deg, #07101c 0%, #0d1f36 50%, #07101c 100%);
+      border-color: rgba(245, 158, 11, 0.2);
+    }
+
+    [data-theme="dark"] .footer-section {
+      background: #03080f;
+    }
+
+    /* Theme Toggle Buttons */
+    .theme-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1.5px solid rgba(245, 158, 11, 0.45);
+      color: var(--gold-light);
+      padding: 7px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .theme-toggle-btn:hover {
+      background: var(--gold-primary);
+      color: #0a1c32;
+      border-color: var(--gold-dark);
+      transform: translateY(-1px);
+    }
+
+    .mobile-theme-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius-md);
+      margin-bottom: 14px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+
+    /* ==========================================================================
+       WELCOME TERMS & CONDITIONS POPUP MODAL
+       ========================================================================== */
+    .policy-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 28, 50, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      animation: fadeInModal 0.3s ease forwards;
+    }
+
+    .policy-modal-card {
+      background: #ffffff;
+      border: 2px solid var(--gold-primary);
+      border-radius: var(--radius-lg);
+      max-width: 680px;
+      width: 100%;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      animation: slideUpModal 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .policy-modal-header {
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border-bottom: 2px solid var(--gold-primary);
+    }
+
+    .policy-icon-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--gold-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+    }
+
+    .policy-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .policy-title-guj {
+      font-family: var(--font-guj);
+      font-size: 0.95rem;
+      color: var(--gold-light);
+      margin-top: 3px;
+    }
+
+    .policy-modal-body {
+      padding: 22px 24px;
+      overflow-y: auto;
+      line-height: 1.6;
+      font-size: 0.92rem;
+      color: var(--text-dark);
+    }
+
+    .policy-lead {
+      font-weight: 700;
+      color: var(--gold-dark);
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+    }
+
+    .policy-points-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .policy-point-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: rgba(15, 43, 72, 0.03);
+      border: 1px solid rgba(15, 43, 72, 0.08);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+    }
+
+    [data-theme="dark"] .policy-point-item {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .point-num {
+      width: 28px;
+      height: 28px;
+      background: var(--gold-primary);
+      color: #0a1c32;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .point-guj {
+      font-family: var(--font-guj);
+      font-size: 0.88rem;
+      color: var(--gold-dark);
+      margin-top: 4px;
+      font-weight: 600;
+    }
+
+    [data-theme="dark"] .point-guj {
+      color: var(--gold-light);
+    }
+
+    .policy-modal-footer {
+      padding: 16px 24px;
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    [data-theme="dark"] .policy-modal-footer {
+      background: #081423;
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .policy-agree-btn {
+      width: 100%;
+      padding: 14px 20px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+    }
+
+    @keyframes fadeInModal {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUpModal {
+      from { transform: translateY(30px) scale(0.96); opacity: 0; }
+      to { transform: translateY(0) scale(1); opacity: 1; }
+    }
+
   </style>
 </head>
 <body>
@@ -2214,6 +2497,11 @@
 
       <!-- Header Actions -->
       <div class="header-actions">
+        <!-- Dark Mode Toggle Button (Desktop) -->
+        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Dark / Light Mode" title="Toggle Dark/Light Mode">
+          <span id="themeBtnIcon">🌙</span>
+          <span id="themeBtnText">Dark</span>
+        </button>
         <!-- Prominent Buy Product Button -->
         <a href="#products" class="btn-buy-product" title="Shop Tailoring & Repair Accessories">
           <span class="gold-dot"></span>
@@ -2232,6 +2520,14 @@
 
     <!-- Mobile Navigation Drawer -->
     <div class="mobile-nav" id="mobileNav">
+      <!-- Dark Mode Row (Mobile) -->
+      <div class="mobile-theme-row">
+        <span>Dark Mode (ડાર્ક મોડ):</span>
+        <button type="button" class="theme-toggle-btn" id="mobileThemeToggleBtn" aria-label="Toggle Dark / Light Mode">
+          <span id="mobileThemeBtnIcon">🌙</span>
+          <span id="mobileThemeBtnText">Dark</span>
+        </button>
+      </div>
       <a href="#hero" class="mobile-nav-link">Home <span>→</span></a>
       <a href="#about" class="mobile-nav-link">About Us <span>→</span></a>
       <a href="#services" class="mobile-nav-link">Services <span>→</span></a>
@@ -2496,6 +2792,211 @@
 
         </div>
       </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       PRODUCTS & ACCESSORIES CATALOG SECTION
+       ======================================================================== -->
+  <section class="products-section" id="products">
+    <div class="container">
+
+      <div class="text-center">
+        <div class="section-tag">
+          <span>WHOLESALE ACCESSORIES & DIY PRODUCTS</span>
+        </div>
+        <h2 class="section-title">
+          Tailoring Materials & Repair Products
+        </h2>
+        <p class="section-subtitle gujarati">
+          અમારી પ્રોડક્ટ્સ અને હોલસેલ એક્સેસરીઝ — સીધા WhatsApp પર ઓર્ડર કરો:
+        </p>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- Product 1: SUN Brand Wire Runners -->
+        <div class="catalog-card">
+          <div class="catalog-img-wrap">
+            <span class="catalog-badge">250 Pcs Pouch Pack</span>
+            <img src="images/product-toni-runners.jpg" alt="TONI Brand Wire Zipper Runners for Trolley Bags & Ladies Bags" loading="lazy">
+          </div>
+          <div class="catalog-body">
+            <div>
+              <span class="catalog-brand">TONI Original</span>
+              <h3 class="catalog-title">TONI Brand Wire Runners for Trolley Bags & Ladies Bags</h3>
+              <p class="catalog-desc">
+                Heavy-duty TONI brand wire puller sliders for trolley luggage and ladies bags. 250 runners per pouch.
+              </p>
+            </div>
+            <div class="catalog-meta-box">
+              <div class="catalog-price-row">
+                <span class="catalog-price">From ₹2,999</span>
+                <span class="catalog-delivery-tag">+ Delivery Charges</span>
+              </div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">
+                Sizes: No. 5, 7, 8 (₹2,999) & No. 10 (₹3,499) • 250 Pcs
+              </div>
+            </div>
+            <a href="product.html?id=sun-runners" target="_blank" rel="noopener noreferrer" class="btn-view-pdp" title="View details and order SUN runners in new tab">
+              <span>View Details & Buy ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 2: Jeans Two-Part Metal Buttons -->
+        <div class="catalog-card">
+          <div class="catalog-img-wrap">
+            <span class="catalog-badge">100 Pcs Complete Set</span>
+            <img src="images/product-jeans-buttons.jpg" alt="Jeans Two-Part Metal Buttons" loading="lazy">
+          </div>
+          <div class="catalog-body">
+            <div>
+              <span class="catalog-brand">Royal Accessories</span>
+              <h3 class="catalog-title">Jeans Two-Part Metal Buttons (100 Pcs Pack)</h3>
+              <p class="catalog-desc">
+                High-strength embossed metal buttons with ribbed tack studs for jeans pants, jackets, dungarees, and workwear.
+              </p>
+            </div>
+            <div class="catalog-meta-box">
+              <div class="catalog-price-row">
+                <span class="catalog-price">₹599</span>
+                <span class="catalog-delivery-tag">+ Delivery Charges</span>
+              </div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">
+                Contents: 100 Caps + 100 Tack Nails
+              </div>
+            </div>
+            <a href="product.html?id=jeans-buttons" target="_blank" rel="noopener noreferrer" class="btn-view-pdp" title="View details and order jeans buttons in new tab">
+              <span>View Details & Buy ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 3: Premium Brass Jeans Zippers -->
+        <div class="catalog-card">
+          <div class="catalog-img-wrap">
+            <span class="catalog-badge">50 Pcs Pouch Pack</span>
+            <img src="images/product-brass-zippers.jpg" alt="Premium Brass Metal Jeans Zippers" loading="lazy">
+          </div>
+          <div class="catalog-body">
+            <div>
+              <span class="catalog-brand">Royal Denim Accessories</span>
+              <h3 class="catalog-title">Premium Brass Metal Jeans Zippers (50 Pcs)</h3>
+              <p class="catalog-desc">
+                Original top quality smooth running chain with brass/copper teeth and auto-lock puller sliders on dark navy tape.
+              </p>
+            </div>
+            <div class="catalog-meta-box">
+              <div class="catalog-price-row">
+                <span class="catalog-price">₹1,499</span>
+                <span class="catalog-delivery-tag">+ Delivery Charges</span>
+              </div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">
+                Available Lengths: 5, 6, 7 Inch
+              </div>
+            </div>
+            <a href="product.html?id=brass-zippers" target="_blank" rel="noopener noreferrer" class="btn-view-pdp" title="View details and order brass zippers in new tab">
+              <span>View Details & Buy ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 4: Heavy-Duty Jacket Zippers -->
+        <div class="catalog-card">
+          <div class="catalog-img-wrap">
+            <span class="catalog-badge">26" & 28" Lengths</span>
+            <img src="images/product-jacket-zippers.jpg" alt="Heavy-Duty Jacket & Outerwear Zippers" loading="lazy">
+          </div>
+          <div class="catalog-body">
+            <div>
+              <span class="catalog-brand">Heavy-Duty Outerwear</span>
+              <h3 class="catalog-title">Heavy-Duty Jacket & Outerwear Zippers</h3>
+              <p class="catalog-desc">
+                Separating open-end zippers for jackets. Available in molded Fiber Chain & Golden Brass Metal Chain.
+              </p>
+            </div>
+            <div class="catalog-meta-box">
+              <div class="catalog-price-row">
+                <span class="catalog-price">₹299 – ₹2,999</span>
+                <span class="catalog-delivery-tag">+ Delivery Charges</span>
+              </div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">
+                Single Piece & 50 Pcs Wholesale Pouch
+              </div>
+            </div>
+            <a href="product.html?id=jacket-zippers" target="_blank" rel="noopener noreferrer" class="btn-view-pdp" title="View details and order jacket zippers in new tab">
+              <span>View Details & Buy ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 5: FabriBond Plus + Velcro -->
+        <div class="catalog-card">
+          <div class="catalog-img-wrap">
+            <span class="catalog-badge" style="background: #b45309;">Authentic DIY Kit</span>
+            <img src="images/product-fabribond.jpg" alt="FabriBond Plus Vulcanized Repair Sheet and Velcro" loading="lazy">
+          </div>
+          <div class="catalog-body">
+            <div>
+              <span class="catalog-brand">FabriBond Plus</span>
+              <h3 class="catalog-title">FabriBond Plus + Velcro Fastener Pack</h3>
+              <p class="catalog-desc">
+                5" × 20" vulcanized adhesive repair sheet + Hook & Loop Velcro fastener tape. Permanent bond with domestic iron without stitching.
+              </p>
+            </div>
+            <div class="catalog-meta-box">
+              <div class="catalog-price-row">
+                <div>
+                  <span style="font-size: 0.95rem; color: #94a3b8; text-decoration: line-through; margin-right: 6px;">₹130</span>
+                  <span class="catalog-price">₹99</span>
+                </div>
+                <span class="catalog-delivery-tag" style="background: rgba(239, 68, 68, 0.1); color: #dc2626; border-color: rgba(239,68,68,0.4);">
+                  + ₹50 Delivery
+                </span>
+              </div>
+              <div class="catalog-wholesale-tag">
+                📦 Wholesale Available (Higher Qty = Lower Price)
+              </div>
+            </div>
+            <a href="product.html?id=fabribond-velcro" target="_blank" rel="noopener noreferrer" class="btn-view-pdp" title="View details and order FabriBond in new tab">
+              <span>View Details & Buy ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product 6: Megibha Elastic Rolls -->
+        <div class="catalog-card">
+          <div class="catalog-img-wrap">
+            <span class="catalog-badge">90 Foot Roll (~27.4m)</span>
+            <img src="images/product-elastic-rolls.jpg" alt="Megibha Heavy-Duty Tailoring Elastic Roll" loading="lazy">
+          </div>
+          <div class="catalog-body">
+            <div>
+              <span class="catalog-brand">Megibha Original</span>
+              <h3 class="catalog-title">Megibha Heavy-Duty Tailoring Elastic Roll</h3>
+              <p class="catalog-desc">
+                Premium woven stretch elastic rolls in Optic White & Deep Black. Widths: 1", 1.5", 2" & 2.5". Durable elastic memory.
+              </p>
+            </div>
+            <div class="catalog-meta-box">
+              <div class="catalog-price-row">
+                <span class="catalog-price">₹999</span>
+                <span class="catalog-delivery-tag">+ Delivery Charges</span>
+              </div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">
+                Length: 90 Feet • White & Black
+              </div>
+            </div>
+            <a href="product.html?id=megibha-elastic" target="_blank" rel="noopener noreferrer" class="btn-view-pdp" title="View details and order Megibha elastic in new tab">
+              <span>View Details & Buy ↗</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
@@ -2925,209 +3426,7 @@
   </div>
 
 
-  <!-- ========================================================================
-       PRODUCTS & ACCESSORIES CATALOG SECTION
-       ======================================================================== -->
-  <section class="products-section" id="products">
-    <div class="container">
-
-      <div class="text-center">
-        <div class="section-tag">
-          <span>WHOLESALE ACCESSORIES & DIY PRODUCTS</span>
-        </div>
-        <h2 class="section-title">
-          Tailoring Materials & Repair Products
-        </h2>
-        <p class="section-subtitle gujarati">
-          અમારી પ્રોડક્ટ્સ અને હોલસેલ એક્સેસરીઝ — સીધા WhatsApp પર ઓર્ડર કરો:
-        </p>
-      </div>
-
-      <div class="products-grid">
-
-        <!-- Product 1: SUN Brand Wire Runners -->
-        <div class="catalog-card">
-          <div class="catalog-img-wrap">
-            <span class="catalog-badge">1,000 Pcs Bulk Pack</span>
-            <img src="images/product-sun-runners.jpg" alt="SUN Brand Wire Zipper Runners for Trolley Bags & Ladies Bags" loading="lazy">
-          </div>
-          <div class="catalog-body">
-            <div>
-              <span class="catalog-brand">SUN Original</span>
-              <h3 class="catalog-title">SUN Brand Wire Runners for Trolley Bags & Ladies Bags</h3>
-              <p class="catalog-desc">
-                Heavy-duty wire puller runners in sizes No. 5, 7, 8 & 10 for trolley luggage, duffle bags and ladies handbags.
-              </p>
-            </div>
-            <div class="catalog-meta-box">
-              <div class="catalog-price-row">
-                <span class="catalog-price">₹3,200</span>
-                <span class="catalog-delivery-tag">+ Delivery Charges</span>
-              </div>
-              <div style="font-size: 0.8rem; color: var(--text-muted);">
-                Sizes: No. 5, No. 7, No. 8, No. 10
-              </div>
-            </div>
-            <a href="product.html?id=sun-runners" target="_blank" rel="noopener noreferrer" class="btn-view-pdp" title="View details and order SUN runners in new tab">
-              <span>View Details & Buy ↗</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Product 2: Jeans Two-Part Metal Buttons -->
-        <div class="catalog-card">
-          <div class="catalog-img-wrap">
-            <span class="catalog-badge">100 Pcs Complete Set</span>
-            <img src="images/product-jeans-buttons.jpg" alt="Jeans Two-Part Metal Buttons" loading="lazy">
-          </div>
-          <div class="catalog-body">
-            <div>
-              <span class="catalog-brand">Royal Accessories</span>
-              <h3 class="catalog-title">Jeans Two-Part Metal Buttons (100 Pcs Pack)</h3>
-              <p class="catalog-desc">
-                High-strength embossed metal buttons with ribbed tack studs for jeans pants, jackets, dungarees, and workwear.
-              </p>
-            </div>
-            <div class="catalog-meta-box">
-              <div class="catalog-price-row">
-                <span class="catalog-price">₹599</span>
-                <span class="catalog-delivery-tag">+ Delivery Charges</span>
-              </div>
-              <div style="font-size: 0.8rem; color: var(--text-muted);">
-                Contents: 100 Caps + 100 Tack Nails
-              </div>
-            </div>
-            <a href="product.html?id=jeans-buttons" target="_blank" rel="noopener noreferrer" class="btn-view-pdp" title="View details and order jeans buttons in new tab">
-              <span>View Details & Buy ↗</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Product 3: Premium Brass Jeans Zippers -->
-        <div class="catalog-card">
-          <div class="catalog-img-wrap">
-            <span class="catalog-badge">50 Pcs Pouch Pack</span>
-            <img src="images/product-brass-zippers.jpg" alt="Premium Brass Metal Jeans Zippers" loading="lazy">
-          </div>
-          <div class="catalog-body">
-            <div>
-              <span class="catalog-brand">Royal Denim Accessories</span>
-              <h3 class="catalog-title">Premium Brass Metal Jeans Zippers (50 Pcs)</h3>
-              <p class="catalog-desc">
-                Original top quality smooth running chain with brass/copper teeth and auto-lock puller sliders on dark navy tape.
-              </p>
-            </div>
-            <div class="catalog-meta-box">
-              <div class="catalog-price-row">
-                <span class="catalog-price">₹1,499</span>
-                <span class="catalog-delivery-tag">+ Delivery Charges</span>
-              </div>
-              <div style="font-size: 0.8rem; color: var(--text-muted);">
-                Available Lengths: 5, 6, 7 Inch
-              </div>
-            </div>
-            <a href="product.html?id=brass-zippers" target="_blank" rel="noopener noreferrer" class="btn-view-pdp" title="View details and order brass zippers in new tab">
-              <span>View Details & Buy ↗</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Product 4: Heavy-Duty Jacket Zippers -->
-        <div class="catalog-card">
-          <div class="catalog-img-wrap">
-            <span class="catalog-badge">26" & 28" Lengths</span>
-            <img src="images/product-jacket-zippers.jpg" alt="Heavy-Duty Jacket & Outerwear Zippers" loading="lazy">
-          </div>
-          <div class="catalog-body">
-            <div>
-              <span class="catalog-brand">Heavy-Duty Outerwear</span>
-              <h3 class="catalog-title">Heavy-Duty Jacket & Outerwear Zippers</h3>
-              <p class="catalog-desc">
-                Separating open-end zippers for jackets. Available in molded Fiber Chain & Golden Brass Metal Chain.
-              </p>
-            </div>
-            <div class="catalog-meta-box">
-              <div class="catalog-price-row">
-                <span class="catalog-price">₹299 – ₹2,999</span>
-                <span class="catalog-delivery-tag">+ Delivery Charges</span>
-              </div>
-              <div style="font-size: 0.8rem; color: var(--text-muted);">
-                Single Piece & 50 Pcs Wholesale Pouch
-              </div>
-            </div>
-            <a href="product.html?id=jacket-zippers" target="_blank" rel="noopener noreferrer" class="btn-view-pdp" title="View details and order jacket zippers in new tab">
-              <span>View Details & Buy ↗</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Product 5: FabriBond Plus + Velcro -->
-        <div class="catalog-card">
-          <div class="catalog-img-wrap">
-            <span class="catalog-badge" style="background: #b45309;">Authentic DIY Kit</span>
-            <img src="images/product-fabribond.jpg" alt="FabriBond Plus Vulcanized Repair Sheet and Velcro" loading="lazy">
-          </div>
-          <div class="catalog-body">
-            <div>
-              <span class="catalog-brand">FabriBond Plus</span>
-              <h3 class="catalog-title">FabriBond Plus + Velcro Fastener Pack</h3>
-              <p class="catalog-desc">
-                5" × 20" vulcanized adhesive repair sheet + Hook & Loop Velcro fastener tape. Permanent bond with domestic iron without stitching.
-              </p>
-            </div>
-            <div class="catalog-meta-box">
-              <div class="catalog-price-row">
-                <div>
-                  <span style="font-size: 0.95rem; color: #94a3b8; text-decoration: line-through; margin-right: 6px;">₹130</span>
-                  <span class="catalog-price">₹99</span>
-                </div>
-                <span class="catalog-delivery-tag" style="background: rgba(239, 68, 68, 0.1); color: #dc2626; border-color: rgba(239,68,68,0.4);">
-                  + ₹50 Delivery
-                </span>
-              </div>
-              <div class="catalog-wholesale-tag">
-                📦 Wholesale Available (Higher Qty = Lower Price)
-              </div>
-            </div>
-            <a href="product.html?id=fabribond-velcro" target="_blank" rel="noopener noreferrer" class="btn-view-pdp" title="View details and order FabriBond in new tab">
-              <span>View Details & Buy ↗</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Product 6: Megibha Elastic Rolls -->
-        <div class="catalog-card">
-          <div class="catalog-img-wrap">
-            <span class="catalog-badge">90 Foot Roll (~27.4m)</span>
-            <img src="images/product-elastic-rolls.jpg" alt="Megibha Heavy-Duty Tailoring Elastic Roll" loading="lazy">
-          </div>
-          <div class="catalog-body">
-            <div>
-              <span class="catalog-brand">Megibha Original</span>
-              <h3 class="catalog-title">Megibha Heavy-Duty Tailoring Elastic Roll</h3>
-              <p class="catalog-desc">
-                Premium woven stretch elastic rolls in Optic White & Deep Black. Widths: 1", 1.5", 2" & 2.5". Durable elastic memory.
-              </p>
-            </div>
-            <div class="catalog-meta-box">
-              <div class="catalog-price-row">
-                <span class="catalog-price">₹999</span>
-                <span class="catalog-delivery-tag">+ Delivery Charges</span>
-              </div>
-              <div style="font-size: 0.8rem; color: var(--text-muted);">
-                Length: 90 Feet • White & Black
-              </div>
-            </div>
-            <a href="product.html?id=megibha-elastic" target="_blank" rel="noopener noreferrer" class="btn-view-pdp" title="View details and order Megibha elastic in new tab">
-              <span>View Details & Buy ↗</span>
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
+  
 
 
   <!-- ========================================================================
@@ -3372,6 +3671,11 @@
       </div>
 
       <!-- Footer Bottom Copyright & Visit Company Button -->
+      <div style="text-align: center; margin-bottom: 16px;">
+        <button type="button" onclick="openPolicyModal()" style="background: none; border: none; color: var(--gold-light); font-size: 0.88rem; font-weight: 700; cursor: pointer; text-decoration: underline;">
+          📜 View Service Terms & Policies (નિયમો અને શરતો)
+        </button>
+      </div>
       <div class="footer-bottom">
         <div class="footer-bottom-info">
           <p class="footer-bottom-copy">
@@ -3735,6 +4039,146 @@
         input.addEventListener('change', clearFieldError);
       }
     });
+  
+    /* ==========================================================================
+       THEME SYSTEM (Dark / Light Mode with LocalStorage)
+       ========================================================================== */
+    function initTheme() {
+      const savedTheme = localStorage.getItem(royal_theme) || light;
+      applyTheme(savedTheme);
+    }
+
+    function applyTheme(theme) {
+      if (theme === dark) {
+        document.documentElement.setAttribute(data-theme, dark);
+        updateThemeButtons(dark);
+        localStorage.setItem(royal_theme, dark);
+      } else {
+        document.documentElement.removeAttribute(data-theme);
+        updateThemeButtons(light);
+        localStorage.setItem(royal_theme, light);
+      }
+    }
+
+    function updateThemeButtons(theme) {
+      const isDark = (theme === dark);
+      const icon = isDark ? ☀️ : 🌙;
+      const text = isDark ? Light : Dark;
+
+      const dIcon = document.getElementById(themeBtnIcon);
+      const dText = document.getElementById(themeBtnText);
+      if (dIcon) dIcon.textContent = icon;
+      if (dText) dText.textContent = text;
+
+      const mIcon = document.getElementById(mobileThemeBtnIcon);
+      const mText = document.getElementById(mobileThemeBtnText);
+      if (mIcon) mIcon.textContent = icon;
+      if (mText) mText.textContent = text;
+    }
+
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute(data-theme) === dark ? dark : light;
+      const newTheme = (currentTheme === dark) ? light : dark;
+      applyTheme(newTheme);
+    }
+
+    const deskThemeBtn = document.getElementById(themeToggleBtn);
+    if (deskThemeBtn) deskThemeBtn.addEventListener(click, toggleTheme);
+
+    const mobThemeBtn = document.getElementById(mobileThemeToggleBtn);
+    if (mobThemeBtn) mobThemeBtn.addEventListener(click, toggleTheme);
+
+    /* ==========================================================================
+       WELCOME POLICY POPUP SYSTEM
+       ========================================================================== */
+    function checkPolicyModal() {
+      const accepted = localStorage.getItem(royal_policy_accepted);
+      if (!accepted) {
+        const modal = document.getElementById(policyModal);
+        if (modal) modal.style.display = flex;
+      }
+    }
+
+    function acceptPolicyModal() {
+      localStorage.setItem(royal_policy_accepted, true);
+      const modal = document.getElementById(policyModal);
+      if (modal) modal.style.display = none;
+    }
+
+    function openPolicyModal() {
+      const modal = document.getElementById(policyModal);
+      if (modal) modal.style.display = flex;
+    }
+
+    // Initialize Theme and Policy Check on DOM load
+    window.addEventListener(DOMContentLoaded, () => {
+      initTheme();
+      checkPolicyModal();
+    });
+
   </script>
+
+  <!-- ========================================================================
+       WELCOME PRIVACY & SERVICE TERMS POPUP MODAL
+       ======================================================================== -->
+  <div class="policy-modal-backdrop" id="policyModal" role="dialog" aria-modal="true" aria-labelledby="policyModalTitle" style="display: none;">
+    <div class="policy-modal-card">
+      <div class="policy-modal-header">
+        <div class="policy-icon-badge">📜</div>
+        <div>
+          <h2 class="policy-title" id="policyModalTitle">Royal Stores — Service Terms & Conditions</h2>
+          <p class="policy-title-guj gujarati">રોયલ સ્ટોર્સ સેવા નિયમો અને શરતો (વાંચીને આગળ વધો)</p>
+        </div>
+      </div>
+      <div class="policy-modal-body">
+        <p class="policy-lead">Welcome to Royal Stores. Please review our essential pickup & repair service policies before proceeding:</p>
+        
+        <ul class="policy-points-list">
+          <li class="policy-point-item">
+            <span class="point-num">1</span>
+            <div>
+              <strong>Payment Policy (Strictly Mandatory / ફરજિયાત એડવાન્સ):</strong>
+              <p>Work begins only after payment confirmation. <strong>100% advance payment</strong> is preferred, or a minimum of <strong>50% advance payment is strictly mandatory</strong> on the total bill before repair service starts.</p>
+              <p class="point-guj gujarati">કામ શરૂ કરતા પહેલાં કુલ બિલનું 100% અથવા ઓછામાં ઓછું 50% એડવાન્સ પેમેન્ટ આપવું ફરજિયાત છે.</p>
+            </div>
+          </li>
+
+          <li class="policy-point-item">
+            <span class="point-num">2</span>
+            <div>
+              <strong>Turnaround Time (Minimum 1 Week / ઓછામાં ઓછો 1 અઠવાડિયું):</strong>
+              <p>All doorstep pickup to finished return deliveries require a <strong>minimum of 1 week (7 days)</strong>. For example: If your items are picked up on a Sunday, they will be delivered back on the following Sunday.</p>
+              <p class="point-guj gujarati">કપડાં પિકઅપ કર્યા પછી કામ પૂરું થવામાં ઓછામાં ઓછો 1 અઠવાડિયાનો સમય લાગશે (દા.ત. રવિવારે પિકઅપ તો આવતા રવિવારે ડિલિવરી).</p>
+            </div>
+          </li>
+
+          <li class="policy-point-item">
+            <span class="point-num">3</span>
+            <div>
+              <strong>Pre-Existing Heavy Damage Disclaimer:</strong>
+              <p>Royal Stores does not take responsibility or liability for items that already have severe pre-existing fabric tears, dry rot, brittle fiber degradation, or extreme damage prior to service.</p>
+              <p class="point-guj gujarati">જો કોઈ કપડું પહેલેથી જ અતિશય ડેમેજ, સડેલું કે ખૂબ નબળું હશે, તો તેની જવાબદારી અમારી રહેશે નહીં.</p>
+            </div>
+          </li>
+
+          <li class="policy-point-item">
+            <span class="point-num">4</span>
+            <div>
+              <strong>Doorstep Pickup Conditions:</strong>
+              <p>Minimum 3 to 4 clothes and minimum total repair service value of <strong>₹300/-</strong> is required for free doorstep pickup and return delivery.</p>
+              <p class="point-guj gujarati">ઓછામાં ઓછા 3 થી 4 કપડાં અને ઓછામાં ઓછો ₹300/- નો ઓર્ડર હોવો જરૂરી છે.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="policy-modal-footer">
+        <button type="button" class="btn btn-gold policy-agree-btn" id="policyAgreeBtn" onclick="acceptPolicyModal()">
+          <span>✓ I Agree & Continue / સ્વીકારો અને આગળ વધો</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

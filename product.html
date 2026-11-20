@@ -659,6 +659,276 @@
         grid-template-columns: 1fr;
       }
     }
+  
+    /* Dark Mode Theme */
+    [data-theme="dark"] {
+      --primary-navy: #f8fafc;
+      --secondary-navy: #e2e8f0;
+      --text-dark: #f8fafc;
+      --text-muted: #cbd5e1;
+      --text-light: #94a3b8;
+      --bg-body: #060e19;
+      --bg-card: #0d1e34;
+      --border-light: rgba(255, 255, 255, 0.12);
+    }
+    [data-theme="dark"] .pdp-header {
+      background: #03080f;
+    }
+    [data-theme="dark"] .pdp-main-card,
+    [data-theme="dark"] .mini-card,
+    [data-theme="dark"] .address-modal-card {
+      background: #0d1e34;
+      border-color: rgba(255, 255, 255, 0.12);
+      color: #f1f5f9;
+    }
+    [data-theme="dark"] .main-img-wrap {
+      background: #081423;
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    [data-theme="dark"] .trust-pill {
+      background: #081423;
+      border-color: rgba(255, 255, 255, 0.1);
+      color: #cbd5e1;
+    }
+    [data-theme="dark"] .brand-pill {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--gold-light);
+    }
+    [data-theme="dark"] .price-box {
+      background: #081423;
+      border-color: rgba(245, 158, 11, 0.35);
+    }
+    [data-theme="dark"] .pill-btn {
+      background: #081423;
+      color: #e2e8f0;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    [data-theme="dark"] .pill-btn:hover {
+      background: #112642;
+    }
+    [data-theme="dark"] .pill-btn.active {
+      background: var(--gold-primary);
+      color: #0a1c32;
+      border-color: var(--gold-light);
+    }
+    [data-theme="dark"] .specs-table td {
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    [data-theme="dark"] .specs-table tr:nth-child(even) {
+      background: #081423;
+    }
+    [data-theme="dark"] .form-input,
+    [data-theme="dark"] .form-textarea {
+      background: #081423;
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    [data-theme="dark"] .pdp-footer {
+      background: #03080f;
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1.5px solid rgba(245, 158, 11, 0.45);
+      color: var(--gold-light);
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .theme-toggle-btn:hover {
+      background: var(--gold-primary);
+      color: #0a1c32;
+    }
+
+    /* Address & Payment Modal */
+    .address-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 28, 50, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      animation: fadeInModal 0.25s ease forwards;
+    }
+    .address-modal-card {
+      background: #ffffff;
+      border: 2px solid var(--gold-primary);
+      border-radius: var(--radius-lg);
+      max-width: 580px;
+      width: 100%;
+      max-height: 92vh;
+      overflow-y: auto;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+      animation: slideUpModal 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      display: flex;
+      flex-direction: column;
+    }
+    .address-modal-header {
+      background: var(--primary-navy);
+      color: #ffffff;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--gold-primary);
+    }
+    .address-modal-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .address-modal-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .order-mini-summary {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 0.88rem;
+    }
+    [data-theme="dark"] .order-mini-summary {
+      background: #081423;
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    .form-group-pdp {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-label-pdp {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .form-label-pdp span.req {
+      color: #ef4444;
+      font-weight: 800;
+    }
+    .form-input, .form-textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: var(--radius-sm);
+      font-size: 0.92rem;
+      outline: none;
+      transition: border 0.2s;
+      font-family: inherit;
+    }
+    .form-input:focus, .form-textarea:focus {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+    }
+    .form-input.err, .form-textarea.err {
+      border-color: #ef4444;
+      background: #fff5f5;
+    }
+    [data-theme="dark"] .form-input.err, [data-theme="dark"] .form-textarea.err {
+      background: #200808;
+    }
+    .form-err-text {
+      color: #ef4444;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: none;
+    }
+    .payment-options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .payment-option-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .payment-option-card:hover {
+      border-color: var(--gold-primary);
+      background: #f8fafc;
+    }
+    [data-theme="dark"] .payment-option-card:hover {
+      background: #112642;
+    }
+    .payment-option-card.selected {
+      border-color: var(--gold-primary);
+      background: rgba(245, 158, 11, 0.08);
+    }
+    .payment-option-card input[type="radio"] {
+      margin-top: 3px;
+    }
+    .payment-opt-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+    }
+    .payment-opt-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .address-modal-footer {
+      padding: 16px 22px;
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    [data-theme="dark"] .address-modal-footer {
+      background: #081423;
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    .btn-modal-cancel {
+      padding: 10px 18px;
+      background: #e2e8f0;
+      border: none;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--secondary-navy);
+      cursor: pointer;
+    }
+    [data-theme="dark"] .btn-modal-cancel {
+      background: #1f3148;
+      color: #e2e8f0;
+    }
+    .btn-modal-confirm {
+      padding: 12px 22px;
+      background: var(--whatsapp-gradient);
+      color: #ffffff;
+      border: none;
+      border-radius: var(--radius-full);
+      font-size: 0.95rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+    }
+
   </style>
 </head>
 <body>
@@ -676,6 +946,10 @@
         </div>
       </div>
 
+      <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Dark / Light Mode" style="margin-right: 10px;">
+        <span id="themeBtnIcon">🌙</span>
+        <span id="themeBtnText">Dark</span>
+      </button>
       <div class="header-contact-badge">
         <span>📞 Order Desk: +91 97231 14370</span>
       </div>
@@ -778,7 +1052,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.8 14.15c-.24.67-1.39 1.28-1.92 1.36-.5.08-1.15.11-3.69-.94-3.25-1.35-5.34-4.66-5.5-4.88-.16-.22-1.32-1.75-1.32-3.34 0-1.59.83-2.37 1.13-2.69.3-.32.65-.4.87-.4.22 0 .43.01.62.01.2 0 .46-.07.72.55.27.65.92 2.25 1 2.42.08.17.13.37.03.59-.1.22-.16.35-.31.54-.16.18-.33.41-.47.55-.16.16-.33.34-.14.67.19.33.84 1.38 1.8 2.23 1.24 1.1 2.28 1.44 2.61 1.6.33.16.52.14.71-.08.2-.22.84-.98 1.06-1.31.22-.33.45-.28.75-.17.3.11 1.92.91 2.25 1.07.33.16.55.25.63.38.08.14.08.81-.16 1.48z"/>
             </svg>
-            <span>⚡ Buy Now on WhatsApp ↗</span>
+            <span>⚡ Buy Now ↗</span>
           </button>
 
           <p class="whatsapp-notice-sub" id="recipientNotice">
@@ -821,39 +1095,43 @@
     const CATALOG = {
       "sun-runners": {
         id: "sun-runners",
-        brand: "SUN BRAND",
-        title: "SUN Brand Wire Zipper Runners for Trolley Bags & Ladies Bags",
-        desc: "Heavy-duty original SUN brand metallic wire puller zipper sliders. Ideal for trolley luggage bags, duffle bags, ladies purses, and backpacks. Available in standard luggage and bag runner numbers.",
-        image: "images/product-sun-runners.jpg",
-        basePrice: 3200,
-        mrp: null,
+        brand: "TONI BRAND",
+        title: "TONI Brand Wire Zipper Runners for Trolley Bags & Ladies Bags",
+        desc: "Heavy-duty original TONI brand metallic wire puller zipper sliders. Ideal for trolley luggage bags, duffle bags, ladies purses, and backpacks. Each pouch contains 250 pieces of high quality runners.",
+        image: "images/product-toni-runners.jpg",
+        basePrice: 2999,
+        mrp: 3500,
         deliveryTagText: "🚚 + Delivery Charges",
         deliveryChargeText: "+ Delivery Charges",
         recipientNumber: "919723114370",
         recipientName: "Royal Stores (Shehzad Alvi)",
-        unitLabel: "Pack(s) (1000 Pcs each)",
+        unitLabel: "Pouch(es) (250 Pcs each)",
         selectors: [
           {
             id: "runnerSize",
-            label: "Select Runner Size / Number",
+            label: "Select Runner Size (250 Pcs per pack)",
             options: [
-              { label: "No. 5 Runner", value: "No. 5" },
-              { label: "No. 7 Runner", value: "No. 7" },
-              { label: "No. 8 Runner", value: "No. 8" },
-              { label: "No. 10 Runner", value: "No. 10" }
+              { label: "5 Number Size (250 Pcs) – ₹2,999", value: "5 Number Size (250 Pcs)" },
+              { label: "7 Number Size (250 Pcs) – ₹2,999", value: "7 Number Size (250 Pcs)" },
+              { label: "8 Number Size (250 Pcs) – ₹2,999", value: "8 Number Size (250 Pcs)" },
+              { label: "10 Number Size (250 Pcs) – ₹3,499", value: "10 Number Size (250 Pcs)" }
             ],
             defaultIndex: 0
           }
         ],
         specs: [
-          { key: "Brand", val: "SUN Original" },
-          { key: "Packaging", val: "1,000 Pieces Bulk Polythene Pack" },
+          { key: "Brand", val: "TONI Original" },
+          { key: "Packaging", val: "250 Pieces Bulk Pouch Pack" },
+          { key: "Available Sizes", val: "No. 5, No. 7, No. 8 (₹2,999) & No. 10 (₹3,499)" },
           { key: "Type", val: "Wire Puller Slider / Runner" },
-          { key: "Application", val: "Trolley Bags, Luggage, Ladies Bags, Backpacks" },
+          { key: "Application", val: "Trolley Luggage Bags, Ladies Bags, Backpacks" },
           { key: "Material", val: "High Strength Alloy Metal" },
           { key: "Dispatch", val: "Ready Stock • Pan India Shipping" }
         ],
-        getPrice: (state) => 3200
+        getPrice: (state) => {
+          const sz = state.runnerSize || "";
+          return sz.includes("10 Number") ? 3499 : 2999;
+        }
       },
 
       "jeans-buttons": {
@@ -1240,7 +1518,7 @@
       });
 
       // Buy WhatsApp
-      document.getElementById('btnBuyWhatsapp').addEventListener('click', handleWhatsAppOrder);
+      document.getElementById('btnBuyWhatsapp').addEventListener('click', openAddressModal);
     }
 
     function handleWhatsAppOrder() {
@@ -1316,7 +1594,223 @@
       });
     }
 
+    
+    /* ==========================================================================
+       THEME SUPPORT (product.html)
+       ========================================================================== */
+    function initTheme() {
+      const savedTheme = localStorage.getItem('royal_theme') || 'light';
+      applyTheme(savedTheme);
+    }
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        const icon = document.getElementById('themeBtnIcon');
+        const txt = document.getElementById('themeBtnText');
+        if (icon) icon.textContent = '☀️';
+        if (txt) txt.textContent = 'Light';
+        localStorage.setItem('royal_theme', 'dark');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        const icon = document.getElementById('themeBtnIcon');
+        const txt = document.getElementById('themeBtnText');
+        if (icon) icon.textContent = '🌙';
+        if (txt) txt.textContent = 'Dark';
+        localStorage.setItem('royal_theme', 'light');
+      }
+    }
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    }
+    const themeBtn = document.getElementById('themeToggleBtn');
+    if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
+    initTheme();
+
+    /* ==========================================================================
+       ADDRESS & PAYMENT POPUP LOGIC
+       ========================================================================== */
+    function openAddressModal() {
+      const product = CATALOG[currentId];
+      if (!product) return;
+
+      const unitPrice = product.getPrice(currentState);
+      const totalAmount = unitPrice * currentQty;
+
+      // Populate summary
+      let summaryHtml = "<strong>" + product.title + "</strong><br>";
+      if (product.selectors) {
+        product.selectors.forEach(sel => {
+          summaryHtml += "<span style='color:var(--text-muted);'>" + sel.label + ":</span> <strong>" + currentState[sel.id] + "</strong> • ";
+        });
+      }
+      summaryHtml += "<span style='color:var(--text-muted);'>Qty:</span> <strong>" + currentQty + " " + product.unitLabel + "</strong><br>";
+      if (unitPrice > 0) {
+        summaryHtml += "<span style='color:var(--gold-dark); font-weight:800; font-size:1.05rem;'>Total Amount: ₹" + totalAmount.toLocaleString('en-IN') + "</span> <span style='font-size:0.8rem;'>(" + product.deliveryChargeText + ")</span>";
+      } else {
+        summaryHtml += "<span style='color:var(--gold-dark); font-weight:800;'>Wholesale Custom Quotation</span>";
+      }
+
+      document.getElementById('modalOrderSummary').innerHTML = summaryHtml;
+
+      // Reset validation error
+      const addrInput = document.getElementById('custAddressInput');
+      addrInput.classList.remove('err');
+      document.getElementById('addressErrText').style.display = 'none';
+
+      document.getElementById('addressModal').style.display = 'flex';
+      addrInput.focus();
+    }
+
+    function closeAddressModal() {
+      document.getElementById('addressModal').style.display = 'none';
+    }
+
+    function updatePayOptionCards() {
+      const radios = document.querySelectorAll('input[name="payMethod"]');
+      radios.forEach(r => {
+        const card = r.closest('.payment-option-card');
+        if (r.checked) {
+          card.classList.add('selected');
+        } else {
+          card.classList.remove('selected');
+        }
+      });
+    }
+
+    function submitAddressAndOrder() {
+      const addrInput = document.getElementById('custAddressInput');
+      const address = addrInput.value.trim();
+
+      if (!address) {
+        addrInput.classList.add('err');
+        document.getElementById('addressErrText').style.display = 'block';
+        addrInput.focus();
+        return;
+      }
+
+      addrInput.classList.remove('err');
+      document.getElementById('addressErrText').style.display = 'none';
+
+      const custName = document.getElementById('custNameInput').value.trim() || 'Valued Customer';
+      const selectedPay = document.querySelector('input[name="payMethod"]:checked')?.value || 'Cash on Delivery (20% Advance Mandatory)';
+
+      const product = CATALOG[currentId];
+      if (!product) return;
+
+      const unitPrice = product.getPrice(currentState);
+      const totalAmount = unitPrice * currentQty;
+
+      let msg = "This message from your Royals new website 2026.\n\n";
+      msg += "Hello " + product.recipientName + ",\n\n";
+      msg += "I would like to place an order for:\n";
+      msg += "• Product: " + product.title + "\n";
+
+      if (product.selectors) {
+        product.selectors.forEach(sel => {
+          msg += "• " + sel.label + ": " + currentState[sel.id] + "\n";
+        });
+      }
+
+      msg += "• Quantity: " + currentQty + " " + product.unitLabel + "\n";
+      if (unitPrice > 0) {
+        msg += "• Item Price: ₹" + unitPrice.toLocaleString('en-IN') + "\n";
+        msg += "• Total Price: ₹" + totalAmount.toLocaleString('en-IN') + " INR\n";
+        msg += "• Delivery Charge: " + product.deliveryChargeText + "\n\n";
+      } else {
+        msg += "• Price Inquiry: Wholesale quotation requested\n\n";
+      }
+
+      msg += "Customer Details & Delivery:\n";
+      msg += "• Customer Name: " + custName + "\n";
+      msg += "• Delivery Address: " + address + "\n";
+      msg += "• Payment Method: " + selectedPay + "\n\n";
+
+      msg += "Please confirm my order and share dispatch/payment details.\n";
+      msg += "Thank you!";
+
+      closeAddressModal();
+
+      const encoded = encodeURIComponent(msg);
+      const whatsappUrl = "https://wa.me/" + product.recipientNumber + "?text=" + encoded;
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    }
+
     window.addEventListener('DOMContentLoaded', initPage);
   </script>
+
+  <!-- ========================================================================
+       ORDER ADDRESS & PAYMENT METHOD POPUP MODAL
+       ======================================================================== -->
+  <div class="address-modal-backdrop" id="addressModal" role="dialog" aria-modal="true" aria-labelledby="addressModalTitle" style="display: none;" onclick="if(event.target === this) closeAddressModal()">
+    <div class="address-modal-card">
+      <div class="address-modal-header">
+        <h3 class="address-modal-title" id="addressModalTitle">Order Delivery & Payment</h3>
+        <button type="button" onclick="closeAddressModal()" style="background: none; border: none; color: #ffffff; font-size: 1.5rem; cursor: pointer;">&times;</button>
+      </div>
+
+      <div class="address-modal-body">
+        <div class="order-mini-summary" id="modalOrderSummary">
+          <!-- Populated dynamically with product name, size & price -->
+        </div>
+
+        <div class="form-group-pdp">
+          <label class="form-label-pdp" for="custNameInput">Your Name / તમારું નામ (Optional):</label>
+          <input type="text" id="custNameInput" class="form-input" placeholder="e.g. Rahul Patel">
+        </div>
+
+        <div class="form-group-pdp">
+          <label class="form-label-pdp" for="custAddressInput">
+            Delivery Address / ડિલિવરીનું પૂરું સરનામું <span class="req">* (Mandatory)</span>:
+          </label>
+          <textarea id="custAddressInput" class="form-textarea" rows="3" placeholder="Enter house/flat no., building/street, landmark, area & city with pincode"></textarea>
+          <span class="form-err-text" id="addressErrText">⚠️ Please enter your delivery address to proceed. (મહેરબાની કરીને સરનામું લખો)</span>
+        </div>
+
+        <div class="form-group-pdp">
+          <label class="form-label-pdp">
+            Select Payment Method / પેમેન્ટ પદ્ધતિ: <span class="req">*</span>
+          </label>
+          <div class="payment-options-grid">
+            
+            <label class="payment-option-card selected" id="optCardCod">
+              <input type="radio" name="payMethod" value="Cash on Delivery (20% Advance Mandatory)" checked onchange="updatePayOptionCards()">
+              <div>
+                <div class="payment-opt-title">💵 Cash on Delivery (COD) — 20% Advance Required</div>
+                <div class="payment-opt-desc">20% advance payment required online to confirm order dispatch, remaining 80% on delivery.</div>
+              </div>
+            </label>
+
+            <label class="payment-option-card" id="optCardPrepaid">
+              <input type="radio" name="payMethod" value="Prepaid (100% Online Payment)" onchange="updatePayOptionCards()">
+              <div>
+                <div class="payment-opt-title">💳 Prepaid (100% Full Payment)</div>
+                <div class="payment-opt-desc">Pay 100% online before dispatch via UPI / Netbanking / QR.</div>
+              </div>
+            </label>
+
+            <label class="payment-option-card" id="optCardGpay">
+              <input type="radio" name="payMethod" value="Google Pay (GPay / UPI)" onchange="updatePayOptionCards()">
+              <div>
+                <div class="payment-opt-title">📱 Google Pay (GPay / UPI)</div>
+                <div class="payment-opt-desc">Pay instantly using Google Pay or phone UPI barcode.</div>
+              </div>
+            </label>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="address-modal-footer">
+        <button type="button" class="btn-modal-cancel" onclick="closeAddressModal()">Cancel / રદ કરો</button>
+        <button type="button" class="btn-modal-confirm" onclick="submitAddressAndOrder()">
+          <span>Confirm & Order on WhatsApp ➔</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
 </body>
 </html>
